@@ -11,11 +11,16 @@ export default {
       lg: '976px',
       xl: '1440px',
     },
-    colors: {
-      'metallicBlack': '#2c2a35',
-      'offWhite': '#ebedec',
+    
+    extend: {
+      colors: {
+        'metallicBlack': '#191f22',
+        'lightBlue': '#dff5ff',
+        'lightText': 'rgb(241 245 249)',
+        'hoverText': '#00d1f7',
+        'activeText': '#0d4084'
+      },
     },
-    extend: {},
   },
   plugins: [],
 }
