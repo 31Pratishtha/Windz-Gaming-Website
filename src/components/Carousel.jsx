@@ -3,13 +3,10 @@ import { React, useEffect, useRef, useState } from "react";
 export default function Carousel() {
   const timerRef = useRef(null);
   const slides = [
-    { url: "/src/assets/Images/cyberpunk.jpg", title: "cyberpunk" },
-    { url: "/src/assets/Images/Chrononexus.jpg", title: "Chrononexus" },
-    {
-      url: "/src/assets/Images/Astralascendancy.jpg",
-      title: "Astralascendancy",
-    },
     { url: "/src/assets/Images/Destiny.jpg", title: "Destiny" },
+    { url: "/src/assets/Images/Chrononexus.jpg", title: "Chrononexus" },
+    { url: "/src/assets/Images/Astralascendancy.jpg", title: "Astralascendancy"},
+    { url: "/src/assets/Images/cyberpunk.jpg", title: "cyberpunk" },
     { url: "/src/assets/Images/Nomansky.png", title: "Nomansky" },
   ];
 
@@ -46,7 +43,7 @@ export default function Carousel() {
   }, [nextSlide])
 
   return (
-    <div className="max-w-4xl h-80 mx-auto my-5">
+    <div className="max-w-6xl h-[33rem] mx-auto my-10">
       <div className="relative h-[92%] w-full rounded-2xl ">
         <div
           className="bg-no-repeat rounded-2xl bg-cover bg-center flex items-center"
@@ -54,6 +51,7 @@ export default function Carousel() {
             backgroundImage: `url(${slides[currentIndex].url})`,
             width: "100%",
             height: "100%",
+            transition: "0.5s ease-in-out",
           }}
         >
           <div className="flex justify-between items-center px-3 w-full">
