@@ -30,20 +30,20 @@ export default function Carousel() {
     }
   };
 
-  useEffect(() => {
-    if(timerRef.current){
-      clearTimeout(timerRef.current)
-    }
-    console.log("useEffect")
-    timerRef.current = setTimeout(() => {
-      nextSlide()
-    }, 2500)
+  // useEffect(() => {
+  //   if(timerRef.current){
+  //     clearTimeout(timerRef.current)
+  //   }
+  //   console.log("useEffect")
+  //   timerRef.current = setTimeout(() => {
+  //     nextSlide()
+  //   }, 2500)
 
-    return () => {clearTimeout(timerRef.current)}
-  }, [nextSlide])
+  //   return () => {clearTimeout(timerRef.current)}
+  // }, [nextSlide])
 
   return (
-    <div className="max-w-6xl h-[33rem] mx-auto my-10">
+    <div className="h-[12rem] sm:max-w-2xl sm:h-[19rem] md:max-w-6xl md:h-[33rem] mx-auto my-10 px-5">
       <div className="relative h-[92%] w-full rounded-2xl ">
         <div
           className="bg-no-repeat rounded-2xl bg-cover bg-center flex items-center"
@@ -56,7 +56,7 @@ export default function Carousel() {
         >
           <div className="flex justify-between items-center px-3 w-full">
             <div
-              className="bg-white text-2xl opacity-40 rounded-full flex items-center justify-center w-8 h-8 hover:opacity-60 hover:cursor-pointer transition duration-200 ease-in-out"
+              className="text-base w-6 h-6 sm:text-xl sm:w-8 sm:h-8 md:w-12 md:h-12 bg-white md:text-2xl opacity-40 rounded-full flex items-center justify-center hover:opacity-60 hover:cursor-pointer transition duration-200 ease-in-out"
               onClick={() => {
                 prevSlide();
               }}
@@ -64,7 +64,7 @@ export default function Carousel() {
               🡨
             </div>
             <div
-              className="bg-white text-2xl opacity-40 rounded-full flex items-center justify-center w-8 h-8 hover:opacity-60 hover:cursor-pointer transition duration-200 ease-in-out"
+              className="text-base w-6 h-6 sm:text-xl sm:w-8 sm:h-8 md:w-12 md:h-12 bg-white md:text-2xl opacity-40 rounded-full flex items-center justify-center hover:opacity-60 hover:cursor-pointer transition duration-200 ease-in-out"
               onClick={() => {
                 nextSlide();
               }}

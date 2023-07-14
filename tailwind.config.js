@@ -14,11 +14,12 @@ export default {
     
     extend: {
       colors: {
-        'metallicBlack': '#191f22',
+        'myblack': '#161617',
         'lightBlue': '#dff5ff',
         'lightText': 'rgb(241 245 249)',
         'hoverText': '#00d1f7',
-        'activeText': '#0d4084'
+        'activeText': '#0d4084',
+        'mywhite': '#f5f5f7',
       },
     },
   },
