@@ -2,7 +2,7 @@ import { React, useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
-export default function ProductShowPs5() {
+export default function ProductShowVR() {
   const { ref, inView } = useInView({
     threshold: 0.3
   });
@@ -59,7 +59,7 @@ export default function ProductShowPs5() {
         </p>
       </motion.div>
       <div className="md:p-4 flex justify-center mx-auto overflow-hidden">
-        <motion.img animate={ps5Amimaton} initial={{ x: "100vw" }} src="/src/assets/Images/ps5.png" alt="ps5"/>
+        <motion.img animate={ps5Amimaton} initial={{ x: "100vw" }} src="/src/assets/Images/VR.png" alt="VR Headset"/>
       </div>
     </div>
   );
