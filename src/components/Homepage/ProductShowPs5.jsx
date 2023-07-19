@@ -4,7 +4,7 @@ import { useInView } from "react-intersection-observer";
 
 export default function ProductShowPs5() {
   const { ref, inView } = useInView({
-    threshold: 0.3
+    threshold: 0.3,
   });
 
   const NameAnimation = useAnimation();
@@ -28,8 +28,8 @@ export default function ProductShowPs5() {
           duration: 1,
           duration: 1,
           bounce: 0.3,
-        }
-      })
+        },
+      });
     }
 
     if (!inView) {
@@ -39,12 +39,15 @@ export default function ProductShowPs5() {
 
       ps5Amimaton.start({
         x: "100vw",
-      })
+      });
     }
   }, [inView]);
 
   return (
-    <div ref={ref} className="bg-mywhite text-myblack h-auto mx-auto justify-center items-center md:flex">
+    <div
+      ref={ref}
+      className="bg-mywhite text-myblack h-auto mx-auto justify-center items-center p-12 flex flex-col md:flex-row gap-12 md:flex"
+    >
       <motion.div
         animate={NameAnimation}
         className="flex flex-col text-center pt-20 md:pt-0 md:text-left w-[80%] md:w-2/5 mx-auto md:mx-14 gap-4 text-myblack"
@@ -58,8 +61,17 @@ export default function ProductShowPs5() {
           take flight with cutting-edge technology and endless adventures.
         </p>
       </motion.div>
-      <div className="md:p-4 flex justify-center mx-auto overflow-hidden">
-        <motion.img animate={ps5Amimaton} initial={{ x: "100vw" }} src="/src/assets/Images/ps5.png" alt="ps5"/>
+      <div className="p-3 md:p-16 flex justify-center mx-auto overflow-hidden">
+        <motion.img
+          whileHover={{
+            scale: 1.2,
+            transition: { type: "spring", duration: 0.5, bounce: 0.3 },
+          }}
+          animate={ps5Amimaton}
+          initial={{ x: "100vw" }}
+          src="/src/assets/Images/ps5.png"
+          alt="ps5"
+        />
       </div>
     </div>
   );
