@@ -1,13 +1,12 @@
 import React from 'react'
 import Carousel from './Carousel'
-import ProductShow from './ProductShow'
+import ProductShowPs5 from './ProductShowPs5'
 
 export default function Homepage() {
   return (
-    // the carousel
     <>
         <Carousel />
-        <ProductShow />
+        <ProductShowPs5 />
     </>
   )
 }

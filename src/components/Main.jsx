@@ -1,8 +1,8 @@
 import React from "react";
-import AboutUs from "./AboutUs";
-import Pricing from "./Pricing";
-import Contact from "./Contact";
-import Homepage from "./Homepage";
+import AboutUs from "./AboutUs/AboutUs";
+import Pricing from "./Pricing/Pricing";
+import Contact from "./Contact/Contact";
+import Homepage from "./Homepage/Homepage";
 import { Routes, Route } from "react-router-dom";
 
 export default function Main() {

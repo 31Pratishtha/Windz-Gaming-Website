@@ -2,17 +2,17 @@ import { React, useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
-export default function ProductShow() {
+export default function ProductShowPs5() {
   const { ref, inView } = useInView({
     threshold: 0.3
   });
 
-  const animation = useAnimation();
+  const NameAnimation = useAnimation();
+  const ps5Amimaton = useAnimation();
 
   useEffect(() => {
-    console.log("use effect inView value = ", inView);
     if (inView) {
-      animation.start({
+      NameAnimation.start({
         x: 0,
         transition: {
           type: "spring",
@@ -20,36 +20,47 @@ export default function ProductShow() {
           bounce: 0.3,
         },
       });
-    }
 
-    if (!inView) {
-      animation.start({
-        x: "-100vw",
+      ps5Amimaton.start({
+        x: 0,
         transition: {
           type: "spring",
           duration: 1,
+          duration: 1,
           bounce: 0.3,
-        },
+        }
+      })
+    }
+
+    if (!inView) {
+      NameAnimation.start({
+        x: "-100vw",
       });
+
+      ps5Amimaton.start({
+        x: "100vw",
+      })
     }
   }, [inView]);
 
   return (
-    <main ref={ref} className="bg-mywhite h-96 flex">
+    <div ref={ref} className="bg-mywhite h-auto justify-center items-center md:flex">
       <motion.div
-        animate={animation}
-        className="flex flex-col justify-center text-left w-2/5 mx-9 gap-4 text-myblack"
+        animate={NameAnimation}
+        className="flex flex-col text-center pt-20 md:pt-0 md:text-left w-[80%] md:w-2/5 mx-auto md:mx-9 gap-4 text-myblack"
       >
         <h1 className="font-montserrat font-bold text-4xl">WindzStation</h1>
         <p className="font-montserrat text-xl font-normal">
           With New Immersive Experience.
         </p>
         <p className="font-montserrat text-xl font-light">
-          Unleash Your gaming potential with WindzStation, where gaming dreams
+          Unleash your gaming potential with WindzStation, where gaming dreams
           take flight with cutting-edge technology and endless adventures.
         </p>
       </motion.div>
-      <div>{/* image */}</div>
-    </main>
+      <div className="md:p-4 flex justify-center mx-auto overflow-hidden">
+        <motion.img animate={ps5Amimaton} initial={{ x: "100vw" }} src="/src/assets/Images/ps5.png" alt="ps5"/>
+      </div>
+    </div>
   );
 }
