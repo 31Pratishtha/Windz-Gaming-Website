@@ -9,6 +9,10 @@ export default {
       xl: "1440px",
     },
 
+    fontFamily: {
+      montserrat: ["Montserrat", "sans-serif"],
+    },
+
     extend: {
       colors: {
         myblack: "#161617",
@@ -17,9 +21,7 @@ export default {
         hoverText: "#00d1f7",
         activeText: "#0d4084",
         mywhite: "#f5f5f7",
-      },
-      fontFamily: {
-        montserrat: ["Montserrat", "sans-serif"],
+        blueText: "#0d4084"
       },
     },
     plugins: [],
