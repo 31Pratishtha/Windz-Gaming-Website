@@ -106,12 +106,12 @@ export default function Carousel() {
               height: "100%",
             }}
           >
-            <div className="flex flex-col w-[40%] pl-32">
+            <motion.div initial={{x: -100, opacity: 0}} animate={{ x: 0, opacity: 1}} transition={{delay:0.5,  duration: 0.6, ease: "easeInOut" }} className="flex flex-col w-[40%] pl-32">
               <h2 className="font-montserrat text-4xl text-mywhite font-extrabold">
                 {slides[currentIndex].title}
               </h2>
-              <p className="font-montserrat text-md text-mywhite font-normal pt-4">{slides[currentIndex].desc}</p>
-            </div>
+              <p className="font-montserrat text-md text-mywhite font-normal pt-6">{slides[currentIndex].desc}</p>
+            </motion.div>
           </motion.div>
         </AnimatePresence>
         <div className="flex absolute top-[50%] justify-between items-center px-3 w-full">
