@@ -4,14 +4,31 @@ import { motion, AnimatePresence } from "framer-motion";
 export default function Carousel() {
   const timerRef = useRef(null);
   const slides = [
-    { url: "/src/assets/Images/Destiny.jpg", title: "Destiny" },
-    { url: "/src/assets/Images/Chrononexus.jpg", title: "Chrononexus" },
+    {
+      url: "/src/assets/Images/Destiny.jpg",
+      title: "Destiny",
+      desc: "Unleash your destiny in this action-packed adventure, where fate awaits at every turn.",
+    },
+    {
+      url: "/src/assets/Images/Chrononexus.jpg",
+      title: "Chrononexus",
+      desc: " Enter a time-bending world of mystery and marvels, where the nexus of time beckons.",
+    },
     {
       url: "/src/assets/Images/Astralascendancy.jpg",
       title: "Astralascendancy",
+      desc: "Ascend to astral heights and explore uncharted realms in this epic odyssey.",
     },
-    { url: "/src/assets/Images/cyberpunk.jpg", title: "cyberpunk" },
-    { url: "/src/assets/Images/Nomansky.png", title: "Nomansky" },
+    {
+      url: "/src/assets/Images/Cyberpunk.jpg",
+      title: "Cyberpunk",
+      desc: "Immerse yourself in a cybernetic metropolis, where neon-soaked streets hold secrets and surprises.",
+    },
+    {
+      url: "/src/assets/Images/Nomansky.png",
+      title: "Nomansky",
+      desc: "Embark on an endless journey through the cosmos, where boundless skies and uncharted planets await your discovery.",
+    },
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -82,13 +99,20 @@ export default function Carousel() {
             animate="animate"
             exit="exit"
             key={slides[currentIndex].url}
-            className="bg-no-repeat rounded-2xl bg-cover bg-center flex items-center"
+            className=" bg-no-repeat rounded-2xl bg-cover bg-center flex items-center"
             style={{
-              backgroundImage: `url(${slides[currentIndex].url})`,
+              backgroundImage: `linear-gradient(to right, rgba(0, 0, 0, 0.7) 43%, rgba(0, 0, 0, 0.2)), url(${slides[currentIndex].url})`,
               width: "100%",
               height: "100%",
             }}
-          ></motion.div>
+          >
+            <div className="flex flex-col w-[40%] pl-32">
+              <h2 className="font-montserrat text-4xl text-mywhite font-extrabold">
+                {slides[currentIndex].title}
+              </h2>
+              <p className="font-montserrat text-md text-mywhite font-normal pt-4">{slides[currentIndex].desc}</p>
+            </div>
+          </motion.div>
         </AnimatePresence>
         <div className="flex absolute top-[50%] justify-between items-center px-3 w-full">
           <div
