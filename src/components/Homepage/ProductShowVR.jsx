@@ -60,7 +60,7 @@ export default function ProductShowVR() {
           never before.
         </p>
       </motion.div>
-      <div className="md:p-4 flex justify-center mx-auto overflow-hidden">
+      <div className="md:p-10 flex justify-center mx-auto overflow-hidden">
         <motion.img
           whileHover={{
             scale: 1.2,

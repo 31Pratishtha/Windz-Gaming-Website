@@ -85,7 +85,7 @@ export default function Footer() {
 
         <ul className="flex py-2 h-full items-center justify-between">
           {socials.map((icon) => (
-            <li className="flex items-center justify-center">
+            <li className="flex items-center justify-center" key={icon.link}>
               <a href={icon.link} target="_blank" rel="noreferrer" className="text-3xl">
                 <FontAwesomeIcon icon={icon.icon} />
               </a>
