@@ -35,11 +35,13 @@ export default function Footer() {
   return (
     <footer className="bg-lightBlue text-blueText h-auto flex font-montserrat p-12 justify-between">
       <div className="flex flex-col justify-center items-start w-1/3">
-        <img
-          className="w-40"
-          src="/src/assets/Images/LogoLight.png"
-          alt="WindzGaming"
-        />
+        <a href="/">
+          <img
+            className="w-40"
+            src="/src/assets/Images/LogoLight.png"
+            alt="WindzGaming"
+          />
+        </a>
         <p className="text-sm pt-2 italic">
           Embrace the Ultimate Gaming Odyssey, Where Dreams Take Flight with
           WindzGaming's Limitless Adventure.
@@ -49,6 +51,7 @@ export default function Footer() {
         <ul className="flex py-2 h-full items-center flex-col justify-between">
           <li className="transition duration-200 ease-in-out hover:scale-110">
             <NavLink
+              exact
               to="/"
               className="transition duration-200 ease-in-out hover:text-hoverText"
             >
@@ -82,11 +85,15 @@ export default function Footer() {
         </ul>
       </div>
       <div className="w-1/3">
-
         <ul className="flex py-2 h-full items-center justify-between">
           {socials.map((icon) => (
             <li className="flex items-center justify-center" key={icon.link}>
-              <a href={icon.link} target="_blank" rel="noreferrer" className="text-3xl">
+              <a
+                href={icon.link}
+                target="_blank"
+                rel="noreferrer"
+                className="text-3xl"
+              >
                 <FontAwesomeIcon icon={icon.icon} />
               </a>
             </li>

@@ -63,7 +63,7 @@ export default function Carousel() {
     console.log("useEffect");
     timerRef.current = setTimeout(() => {
       nextSlide();
-    }, 2500);
+    }, 3000);
 
     return () => {
       clearTimeout(timerRef.current);
@@ -101,7 +101,7 @@ export default function Carousel() {
             key={slides[currentIndex].url}
             className=" bg-no-repeat rounded-2xl bg-cover bg-center flex items-center"
             style={{
-              backgroundImage: `linear-gradient(to right, rgba(0, 0, 0, 0.7) 43%, rgba(0, 0, 0, 0.2)), url(${slides[currentIndex].url})`,
+              backgroundImage: `linear-gradient(to right, rgba(0, 0, 0, 0.7) 40%, rgba(0, 0, 0, 0.1)), url(${slides[currentIndex].url})`,
               width: "100%",
               height: "100%",
             }}
