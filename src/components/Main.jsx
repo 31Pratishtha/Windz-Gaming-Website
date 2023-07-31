@@ -3,6 +3,7 @@ import AboutUs from "./AboutUs/AboutUs";
 import Pricing from "./Pricing/Pricing";
 import Contact from "./Contact/Contact";
 import Homepage from "./Homepage/Homepage";
+import Signup from "./Signup/Signup";
 import { Routes, Route } from "react-router-dom";
 
 export default function Main() {
@@ -13,6 +14,7 @@ export default function Main() {
         <Route path="/about" Component={AboutUs} />
         <Route path="/pricing" Component={Pricing} />
         <Route path="/contact" Component={Contact} />
+        <Route path="/signup" Component={Signup} />
       </Routes>
     </main>
   );

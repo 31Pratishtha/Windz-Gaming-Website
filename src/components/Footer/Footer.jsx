@@ -35,7 +35,7 @@ export default function Footer() {
   return (
     <footer className="bg-lightBlue text-blueText h-auto flex font-montserrat p-12 justify-between">
       <div className="flex flex-col justify-center items-start w-1/3">
-        <a href="/">
+        <a exact="true" href="/">
           <img
             className="w-40"
             src="/src/assets/Images/LogoLight.png"
@@ -51,7 +51,6 @@ export default function Footer() {
         <ul className="flex py-2 h-full items-center flex-col justify-between">
           <li className="transition duration-200 ease-in-out hover:scale-110">
             <NavLink
-              exact
               to="/"
               className="transition duration-200 ease-in-out hover:text-hoverText"
             >
@@ -92,7 +91,7 @@ export default function Footer() {
                 href={icon.link}
                 target="_blank"
                 rel="noreferrer"
-                className="text-3xl"
+                className="text-3xl transition duration-200 ease-in-out hover:scale-110 hover:text-hoverText"
               >
                 <FontAwesomeIcon icon={icon.icon} />
               </a>
