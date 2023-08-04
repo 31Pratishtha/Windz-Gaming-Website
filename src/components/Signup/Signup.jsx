@@ -13,15 +13,16 @@ export default function Signup() {
     if (data.password !== data.passwordConfirmation) {
       return setError("Passwords do not match");
     }
-
+  
     try {
       setError("");
       setLoading(true);
       await signUp(data.email, data.password);
-    } catch {
+    } catch (error) {
       setError("Failed to create an account");
+      console.error("Error signing up:", error.message);
     }
-
+  
     setLoading(false);
   }
 

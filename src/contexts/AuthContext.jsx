@@ -1,5 +1,8 @@
 import React, { useContext, useState, useEffect, createContext } from "react";
-import { auth } from "../firebase";
+import app from "../firebase";
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+
+const auth = getAuth(app);
 
 const AuthContext = createContext();
 
@@ -10,8 +13,14 @@ export function useAuth() {
 export function AuthProvider({ children }) {
   const [currentUser, setCurrentUser] = useState();
 
-  function signUp(email, password) {
-    return auth.createUserWithEmailAndPassword(email, password);
+  async function signUp(email, password) {
+    try {
+      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+      return userCredential.user;
+    } catch (error) {
+      console.error("Error creating account:", error.message);
+      throw error;
+    }
   }
 
   useEffect(() => {
