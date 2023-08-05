@@ -1,6 +1,7 @@
-import { React, useRef, useState } from "react";
+import { React, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useAuth } from "/src/contexts/AuthContext";
+import { Link } from "react-router-dom";
 
 export default function Signup() {
   const { signUp } = useAuth();
@@ -69,7 +70,7 @@ export default function Signup() {
         </form>
 
         <div className="font-normal text-myblack py-10">
-          <p>Alread have an account ? Log In</p>
+          <p>Alread have an account ? <Link to="/login" className="text-blueText underline">LogIn</Link></p>
         </div>
       </div>
     </div>
