@@ -12,10 +12,15 @@ export function useAuth() {
 
 export function AuthProvider({ children }) {
   const [currentUser, setCurrentUser] = useState();
+  const [loading, setLoading] = useState(true);
 
   async function signUp(email, password) {
     try {
-      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+      const userCredential = await createUserWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
       return userCredential.user;
     } catch (error) {
       console.error("Error creating account:", error.message);
@@ -24,8 +29,10 @@ export function AuthProvider({ children }) {
   }
 
   useEffect(() => {
-    const unsubscribe = auth.onAuthStateChanged((user) => {   //onAuthStateChanged returns a function which when called will unsubscribe from this onAuthStateChanged listener.
+    const unsubscribe = auth.onAuthStateChanged((user) => {
+      //onAuthStateChanged returns a function which when called will unsubscribe from this onAuthStateChanged listener.
       setCurrentUser(user);
+      setLoading(false);
     });
     return unsubscribe;
   }, []);
@@ -34,5 +41,9 @@ export function AuthProvider({ children }) {
     currentUser,
     signUp,
   };
-  return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
+  return (
+    <AuthContext.Provider value={value}>
+      {!loading && children}
+    </AuthContext.Provider>
+  );
 }

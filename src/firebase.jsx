@@ -1,13 +1,13 @@
 import { initializeApp } from "firebase/app";
 const firebaseConfig = {
-    apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
-    authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
-    projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
-    storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
-    messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
-    appId: import.meta.env.VITE_FIREBASE_APP_ID,
-    measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID,
-}
+  apiKey: "AIzaSyBfCGe_2n-AixuhFvmmQLU1MwLqZQUw0lM",
+  authDomain: "windzgaming-development.firebaseapp.com",
+  projectId: "windzgaming-development",
+  storageBucket: "windzgaming-development.appspot.com",
+  messagingSenderId: "1011474746181",
+  appId: "1:1011474746181:web:56a3dbadce0abca68bcc2c",
+  measurementId: "G-6SVKKCP2C3",
+};
 
-const app = initializeApp(firebaseConfig)
+const app = initializeApp(firebaseConfig);
 export default app;

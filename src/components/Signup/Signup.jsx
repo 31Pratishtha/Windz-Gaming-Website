@@ -7,7 +7,7 @@ export default function Signup() {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
-  const { register, handleSubmit, formState: { errors } } = useForm();
+  const { register, handleSubmit } = useForm();
 
   async function handleSave(data) {
     if (data.password !== data.passwordConfirmation) {
@@ -27,51 +27,51 @@ export default function Signup() {
   }
 
   return (
-    <>
-      <div className="p-9 align-center">
-        <div className="font-semibold text-mywhite">
-          <h2>Sign Up</h2>
+    <div className="p-16">
+      <div className="flex flex-col justify-center items-center max-w-lg bg-white m-auto rounded-2xl">
+        <div className="font-bold text-mywhite text-2xl py-10 w-full text-center bg-blueText rounded-t-2xl">
+          <h1>Sign Up</h1>
         </div>
+        
+        {error && <div className="text-myblack">{error}</div>}
 
-        {error && <div className="text-mywhite">{error}</div>}
-
-        <form onSubmit={handleSubmit(handleSave)}>
-          <label htmlFor="email" className="text-mywhite">
+        <form onSubmit={handleSubmit(handleSave)} className="flex flex-col gap-3 pt-10">
+          <label htmlFor="email" className="text-myblack">
             Email
           </label>
-          <br />
-          <input type="email" {...register("email", {required: true})} />
-          <br />
+        
+          <input type="email" {...register("email", {required: true})} className="rounded-lg px-3 py-1 bg-slate-200"/>
+        
 
-          <label htmlFor="password" className="text-mywhite">
+          <label htmlFor="password" className="text-myblack">
             Password
           </label>
-          <br />
+        
           <input
             type="password"
             {...register("password", {required: true})}
-            />
-          <br />
+            className="rounded-lg px-3 py-1 bg-slate-200"/>
+        
 
-          <label htmlFor="passwordConfirmation" className="text-mywhite">
+          <label htmlFor="passwordConfirmation" className="text-myblack">
             Confirm Password
           </label>
-          <br />
+        
           <input
             type="password"
             {...register("passwordConfirmation", {required: true})}
-            />
-          <br />
+            className="rounded-lg px-3 py-1 bg-slate-200"/>
+        
 
-          <button disabled={loading} type="submit" className="text-mywhite">
+          <button disabled={loading} type="submit" className="text-mywhite bg-blueText p-2 w-4/5 m-auto mt-10 rounded-2xl">
             Save
           </button>
         </form>
 
-        <div className="font-normal text-mywhite">
+        <div className="font-normal text-myblack py-10">
           <p>Alread have an account ? Log In</p>
         </div>
       </div>
-    </>
+    </div>
   );
 }
