@@ -1,6 +1,6 @@
 import React, { useContext, useState, useEffect, createContext } from "react";
 import app from "../firebase";
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "firebase/auth";
 
 const auth = getAuth(app);
 
@@ -41,6 +41,15 @@ export function AuthProvider({ children }) {
       throw error;
     }
   }
+  
+  async function logOut() {
+    try {
+      await signOut(auth);
+    } catch (error) {
+      console.error("Error logging out:", error.message);
+      throw error;
+    }
+  }
 
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((user) => {
@@ -54,7 +63,8 @@ export function AuthProvider({ children }) {
   const value = {
     currentUser,
     signUp,
-    logIn
+    logIn,
+    logOut
   };
   return (
     <AuthContext.Provider value={value}>

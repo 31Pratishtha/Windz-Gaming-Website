@@ -1,13 +1,14 @@
 import { React, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useAuth } from "/src/contexts/AuthContext";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Signup() {
   const { signUp } = useAuth();
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
+  const navigate = useNavigate();
   const { register, handleSubmit } = useForm();
 
   async function handleSave(data) {
@@ -19,8 +20,9 @@ export default function Signup() {
       setError("");
       setLoading(true);
       await signUp(data.email, data.password);
+      navigate("/", { replace: true });
     } catch (error) {
-      setError("Failed to create an account");
+      setError(`Failed to create an account.`);
       console.error("Error signing up:", error.message);
     }
   

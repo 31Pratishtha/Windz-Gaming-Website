@@ -5,6 +5,7 @@ import Contact from "./Contact/Contact";
 import Homepage from "./Homepage/Homepage";
 import Signup from "./Auths/Signup";
 import Login from "./Auths/Login";
+import Logout from "./Auths/Logout";
 import { Routes, Route } from "react-router-dom";
 
 export default function Main() {
@@ -16,8 +17,8 @@ export default function Main() {
         <Route path="/pricing" Component={Pricing} />
         <Route path="/contact" Component={Contact} />
         <Route path="/signup" Component={Signup} />
-        <Route path="/signup" Component={Signup} />
         <Route path="/login" Component={Login} />
+        <Route path="/profile" Component={Logout} />
       </Routes>
     </main>
   );
