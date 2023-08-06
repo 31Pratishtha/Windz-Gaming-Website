@@ -36,24 +36,27 @@ export default function Navbar() {
               Contact
             </NavLink>
           </li>
-          <li className="transition duration-200 ease-in-out hover:scale-110">
-            <NavLink
-              to="/cart"
-              className="transition duration-200 ease-in-out hover:text-hoverText"
-            >
-              Cart
-            </NavLink>
-          </li>
 
           {currentUser ? (
-            <li className="transition duration-200 ease-in-out hover:scale-110">
-              <NavLink
-                to="/profile"
-                className="transition duration-200 ease-in-out hover:text-hoverText"
-              >
-                Profile
-              </NavLink>
-            </li>
+            <>
+              <li className="transition duration-200 ease-in-out hover:scale-110">
+                <NavLink
+                  to="/cart"
+                  className="transition duration-200 ease-in-out hover:text-hoverText"
+                >
+                  Cart
+                </NavLink>
+              </li>
+
+              <li className="transition duration-200 ease-in-out hover:scale-110">
+                <NavLink
+                  to="/profile"
+                  className="transition duration-200 ease-in-out hover:text-hoverText"
+                >
+                  Profile
+                </NavLink>
+              </li>
+            </>
           ) : (
             <>
               <li className="transition duration-200 ease-in-out hover:scale-110">
