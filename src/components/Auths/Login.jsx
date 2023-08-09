@@ -2,9 +2,10 @@ import { React, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useAuth } from "/src/contexts/AuthContext";
 import { Link, useNavigate } from "react-router-dom";
+import { GoogleButton } from "react-google-button";
 
 export default function Signup() {
-  const { logIn } = useAuth();
+  const { logIn, googleSignUp } = useAuth();
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
@@ -20,6 +21,20 @@ export default function Signup() {
     } catch (error) {
       setError("Failed to log in");
       console.error("Error signing in:", error.message);
+    }
+
+    setLoading(false);
+  }
+
+  async function handleGoogleLogIn(data) {
+    try {
+      setError("");
+      setLoading(true);
+      await googleSignUp();
+      navigate("/", { replace: true });
+    } catch (error) {
+      setError(`Failed to create an account with Google.`);
+      console.error("Error signing up with Google:", error.message);
     }
 
     setLoading(false);
@@ -66,6 +81,12 @@ export default function Signup() {
             Log In
           </button>
         </form>
+
+        <p className="py-4">OR</p>
+
+        <div>
+          <GoogleButton onClick={handleGoogleLogIn} />
+        </div>
 
         <div className="font-normal text-myblack py-10">
           <p>

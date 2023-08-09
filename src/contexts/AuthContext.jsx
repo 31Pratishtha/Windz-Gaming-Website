@@ -1,16 +1,20 @@
 import React, { useContext, useState, useEffect, createContext } from "react";
 import app from "../firebase";
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+
 
 const auth = getAuth(app);
 
 const AuthContext = createContext();
+
+const googleProvider = new GoogleAuthProvider();
 
 export function useAuth() {
   return useContext(AuthContext);
 }
 
 export function AuthProvider({ children }) {
+
   const [currentUser, setCurrentUser] = useState();
   const [loading, setLoading] = useState(true);
 
@@ -51,6 +55,15 @@ export function AuthProvider({ children }) {
     }
   }
 
+  async function googleSignUp() {
+    try {
+      await signInWithPopup(auth, googleProvider);
+    } catch (error) {
+      console.error("Error signing in with Google:", error.message);
+      throw error;
+    }
+  }
+
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((user) => {
       //onAuthStateChanged returns a function which when called will unsubscribe from this onAuthStateChanged listener.
@@ -64,7 +77,8 @@ export function AuthProvider({ children }) {
     currentUser,
     signUp,
     logIn,
-    logOut
+    logOut,
+    googleSignUp
   };
   return (
     <AuthContext.Provider value={value}>
