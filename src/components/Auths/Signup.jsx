@@ -46,10 +46,13 @@ export default function Signup() {
 
   return (
     <div className="bg-[url('/src/assets/Images/signup-bg-lg.png')]">
-      <div className="p-16">
-        <div className="flex flex-col justify-center items-center max-w-lg bg-white m-auto rounded-2xl bg-opacity-20 shadow-3xl border-l border-t border-opacity-30 border-neutral-50 backdrop-blur-xs overflow-hidden relative">
-          <div className="w-full">
-            <div className="font-bold text-mywhite text-2xl py-10 text-center bg-blueText">
+      <div className="p-10">
+        <div className="flex flex-col justify-center items-center max-w-lg bg-white m-auto rounded-2xl bg-opacity-20 shadow-3xl border-l border-t border-opacity-30 border-neutral-50 backdrop-blur-xs   overflow-hidden relative">
+          <div className="w-full h-52 flex">
+            <div className="flex flex-col justify-end">
+              <div className="w-[150%] h-[700px] absolute bg-blueText bg-gradient-to-l from-[rgba(25,91,179,1)-95%] to-[rgba(13,64,132,1)] rounded-[50%] flex flex-col -left-44"></div>
+            </div>
+            <div className="font-bold text-mywhite text-3xl md:text-4xl z-10 pl-28 pt-20">
               <h1>Sign Up</h1>
             </div>
           </div>
@@ -67,7 +70,7 @@ export default function Signup() {
             <input
               type="email"
               {...register("email", { required: true })}
-              className="rounded-lg px-3 py-1 bg-slate-200"
+              className="rounded-lg px-3 py-1 bg-slate-200 outline outline-offset-0 outline-2 outline-blueText "
             />
 
             <label htmlFor="password" className="text-gray-300">
@@ -77,7 +80,7 @@ export default function Signup() {
             <input
               type="password"
               {...register("password", { required: true })}
-              className="rounded-lg px-3 py-1 bg-slate-200"
+              className="rounded-lg px-3 py-1 bg-slate-200 outline outline-offset-0 outline-2 outline-blueText "
             />
 
             <label htmlFor="passwordConfirmation" className="text-gray-300">
@@ -87,7 +90,7 @@ export default function Signup() {
             <input
               type="password"
               {...register("passwordConfirmation", { required: true })}
-              className="rounded-lg px-3 py-1 bg-slate-200"
+              className="rounded-lg px-3 py-1 bg-slate-200 outline outline-offset-0 outline-2 outline-blueText "
             />
 
             <button
@@ -105,10 +108,10 @@ export default function Signup() {
             <GoogleButton onClick={handleGoogleSignUp} />
           </div>
 
-          <div className="font-normal text-mywhite py-10">
+          <div className="font-normal text-mywhite py-10 text-lg">
             <p>
               Alread have an account ?{" "}
-              <Link to="/login" className="text-blueText underline">
+              <Link to="/login" className="text-blueText underline font-bold">
                 LogIn
               </Link>
             </p>
