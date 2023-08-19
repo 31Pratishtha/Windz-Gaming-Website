@@ -1,15 +1,15 @@
-import { React, useState } from "react";
+import { React, useState, useContext } from "react";
 import { useForm } from "react-hook-form";
 import { useAuth } from "/src/contexts/AuthContext";
 import { Link, useNavigate } from "react-router-dom";
 import { GoogleButton } from "react-google-button";
-import { motion } from "framer-motion";
+import { AuthTypeContext } from "../../contexts/AuthTypeContext";
 
 export default function Signup() {
   const { signUp, googleSignUp } = useAuth();
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
-  const [expanded, setExpanded] = useState(false);    //for backdrop animation
+  const { switchToLogIn } = useContext(AuthTypeContext);
 
   const navigate = useNavigate();
   const { register, handleSubmit } = useForm();
@@ -46,112 +46,67 @@ export default function Signup() {
     setLoading(false);
   }
 
-  const backdropVariants = {
-    expanded: {
-      width: "160%",
-      height: "1700px",
-      borderRadius: "20%",
-    },
-
-    collapsed: {
-      width: "150%",
-      height: "700px",
-      borderRadius: "50%",
-      transform: "rotate(0deg)",
-    }
-  }
-
-  const expandingTransition = {
-    type: "spring",
-    duration: 2.3,
-    stiffness: 30,
-
-  }
-
-  const playExpandingAnimation = () => {
-    setExpanded(true);
-    setTimeout(() => {
-      setExpanded(false);
-    }, expandingTransition.duration * 1000 - 1500);
-  }
-
-
   return (
-    <div className="bg-[url('/src/assets/Images/signup-bg-lg.png')]">
-      <div className="p-10">
-        <div className="flex flex-col justify-center items-center max-w-md bg-white m-auto rounded-2xl bg-opacity-20 shadow-3xl border-l border-t border-opacity-30 border-neutral-50 backdrop-blur-xs overflow-hidden relative">
-          <div className="w-full h-52 flex">
-              <motion.div initial={false} animate={expanded ? "expanded" : "collapsed"} variants={backdropVariants} transition={expandingTransition} className="w-[150%] h-[700px] absolute bg-blueText bg-gradient-to-l from-[rgba(25,91,179,1)-95%] to-[rgba(13,64,132,1)] rounded-[50%] flex flex-col -left-44 -top-[60%]"></motion.div>
-            <div className="font-bold text-mywhite text-3xl md:text-4xl z-10 pl-28 pt-20">
-              <h1>Sign Up</h1>
-            </div>
-          </div>
+    <>
+      {error && <div className="text-gray-300 z-10 my-6">{error}</div>}
+      <form
+        onSubmit={handleSubmit(handleSave)}
+        className="flex flex-col gap-3 pt-6"
+      >
+        <label htmlFor="email" className="text-gray-300">
+          Email
+        </label>
 
-          {error && <div className="text-mywhite">{error}</div>}
+        <input
+          type="email"
+          {...register("email", { required: true })}
+          className="rounded-lg px-3 py-1 bg-slate-200 outline outline-offset-0 outline-2 outline-blueText "
+        />
 
-          <form
-            onSubmit={handleSubmit(handleSave)}
-            className="flex flex-col gap-3 pt-10"
-          >
-            <label htmlFor="email" className="text-gray-300">
-              Email
-            </label>
+        <label htmlFor="password" className="text-gray-300">
+          Password
+        </label>
 
-            <input
-              type="email"
-              {...register("email", { required: true })}
-              className="rounded-lg px-3 py-1 bg-slate-200 outline outline-offset-0 outline-2 outline-blueText "
-            />
+        <input
+          type="password"
+          {...register("password", { required: true })}
+          className="rounded-lg px-3 py-1 bg-slate-200 outline outline-offset-0 outline-2 outline-blueText "
+        />
 
-            <label htmlFor="password" className="text-gray-300">
-              Password
-            </label>
+        <label htmlFor="passwordConfirmation" className="text-gray-300">
+          Confirm Password
+        </label>
 
-            <input
-              type="password"
-              {...register("password", { required: true })}
-              className="rounded-lg px-3 py-1 bg-slate-200 outline outline-offset-0 outline-2 outline-blueText "
-            />
+        <input
+          type="password"
+          {...register("passwordConfirmation", { required: true })}
+          className="rounded-lg px-3 py-1 bg-slate-200 outline outline-offset-0 outline-2 outline-blueText "
+        />
 
-            <label htmlFor="passwordConfirmation" className="text-gray-300">
-              Confirm Password
-            </label>
+        <button
+          disabled={loading}
+          type="submit"
+          className="text-mywhite bg-blueText p-2 w-4/5 m-auto mt-4 rounded-2xl"
+        >
+          Save
+        </button>
+      </form>
 
-            <input
-              type="password"
-              {...register("passwordConfirmation", { required: true })}
-              className="rounded-lg px-3 py-1 bg-slate-200 outline outline-offset-0 outline-2 outline-blueText "
-            />
+      <p className="py-4 text-gray-300">OR</p>
 
-            <button
-              disabled={loading}
-              type="submit"
-              className="text-mywhite bg-blueText p-2 w-4/5 m-auto mt-10 rounded-2xl"
-            >
-              Save
-            </button>
-          </form>
-
-          <p className="py-4 text-gray-300">OR</p>
-
-          <div>
-            <GoogleButton onClick={handleGoogleSignUp} />
-          </div>
-
-          <div className="font-normal text-mywhite py-10 text-lg">
-            <p>
-              Alread have an account ?{" "}
-              <Link to="/login" className="text-blueText underline font-bold">
-                LogIn
-              </Link>
-            </p>
-          </div>
-          
-            <p onClick={playExpandingAnimation}>
-              Click Me
-            </p>
-        </div>
+      <div>
+        <GoogleButton onClick={handleGoogleSignUp} />
       </div>
-    </div>
+
+      <div className="font-normal text-mywhite py-2 text-lg">
+        Already have an account?{" "}
+        <span
+          className="text-blueText underline font-bold"
+          onClick={switchToLogIn}
+        >
+          LogIn
+        </span>
+      </div>
+    </>
   );
 }
