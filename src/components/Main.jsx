@@ -1,7 +1,6 @@
 import React from "react";
 import AboutUs from "./AboutUs/AboutUs";
 import Pricing from "./Pricing/Pricing";
-import Contact from "./Contact/Contact";
 import Homepage from "./Homepage/Homepage";
 import AuthPage from "./Auths/AuthPage";
 import Logout from "./Auths/Logout";
@@ -14,7 +13,6 @@ export default function Main() {
         <Route exact path="/" Component={Homepage}/>
         <Route path="/about" Component={AboutUs} />
         <Route path="/pricing" Component={Pricing} />
-        <Route path="/contact" Component={Contact} />
         <Route path="/authentication" Component={AuthPage} />
         <Route path="/profile" Component={Logout} />
       </Routes>

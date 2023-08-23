@@ -1,13 +1,12 @@
 import { React, useState, useContext } from "react";
 import { useForm } from "react-hook-form";
 import { useAuth } from "/src/contexts/AuthContext";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { GoogleButton } from "react-google-button";
 import { AuthTypeContext } from "../../contexts/AuthTypeContext";
 
 export default function Signup() {
-  const { signUp, googleSignUp } = useAuth();
-  const [error, setError] = useState("");
+  const { signUp, googleSignUp, setError, error } = useAuth();
   const [loading, setLoading] = useState(false);
   const { switchToLogIn } = useContext(AuthTypeContext);
 
@@ -48,10 +47,9 @@ export default function Signup() {
 
   return (
     <>
-      {error && <div className="text-gray-300 z-10 my-6">{error}</div>}
       <form
         onSubmit={handleSubmit(handleSave)}
-        className="flex flex-col gap-3 pt-6"
+        className="flex flex-col gap-2 pt-6"
       >
         <label htmlFor="email" className="text-gray-300">
           Email
@@ -101,7 +99,7 @@ export default function Signup() {
       <div className="font-normal text-mywhite py-2 text-lg">
         Already have an account?{" "}
         <span
-          className="text-blueText underline font-bold"
+          className="text-blueText underline font-bold cursor-pointer"
           onClick={switchToLogIn}
         >
           LogIn

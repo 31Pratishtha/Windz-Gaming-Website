@@ -17,6 +17,7 @@ export function AuthProvider({ children }) {
 
   const [currentUser, setCurrentUser] = useState();
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
 
   async function signUp(email, password) {
     try {
@@ -64,6 +65,15 @@ export function AuthProvider({ children }) {
     }
   }
 
+  async function demoAccLogIn() {
+    try {
+      await signInWithEmailAndPassword(auth, "windzdemodemo@windz.com", "demodemo");
+    } catch(error) {
+      console.error("Error logging in with demo account:", error.message);
+      throw error;
+    }
+  }
+
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((user) => {
       //onAuthStateChanged returns a function which when called will unsubscribe from this onAuthStateChanged listener.
@@ -78,7 +88,10 @@ export function AuthProvider({ children }) {
     signUp,
     logIn,
     logOut,
-    googleSignUp
+    googleSignUp,
+    demoAccLogIn,
+    error,
+    setError
   };
   return (
     <AuthContext.Provider value={value}>

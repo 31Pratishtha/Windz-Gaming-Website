@@ -6,8 +6,7 @@ import { GoogleButton } from "react-google-button";
 import { AuthTypeContext } from "../../contexts/AuthTypeContext";
 
 export default function Signup() {
-  const { logIn, googleSignUp } = useAuth();
-  const [error, setError] = useState("");
+  const { logIn, googleSignUp, setError } = useAuth();
   const [loading, setLoading] = useState(false);
   const { switchToSignUp } = useContext(AuthTypeContext);
 
@@ -44,7 +43,6 @@ export default function Signup() {
 
   return (
     <>
-      {error && <div className="text-mywhite z-10 my-6">{error}</div>}
 
       <form
         onSubmit={handleSubmit(handleSave)}
@@ -86,11 +84,12 @@ export default function Signup() {
       </div>
 
       <div className="font-normal text-mywhite py-10 text-lg">
-        Don't have an account? <span
-          className="text-blueText underline font-bold"
+        Don't have an account?{" "}
+        <span
+          className="text-blueText underline font-bold cursor-pointer"
           onClick={switchToSignUp}
         >
-             SignUp
+          SignUp
         </span>
       </div>
     </>
