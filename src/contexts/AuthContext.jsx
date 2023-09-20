@@ -67,7 +67,7 @@ export function AuthProvider({ children }) {
 
   async function demoAccLogIn() {
     try {
-      await signInWithEmailAndPassword(auth, "windzdemodemo@windz.com", "demodemo");
+      await signInWithEmailAndPassword(auth, "windzdemoacc@windz.com", "demodemo");
     } catch(error) {
       console.error("Error logging in with demo account:", error.message);
       throw error;
