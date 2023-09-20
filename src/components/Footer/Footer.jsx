@@ -33,8 +33,8 @@ export default function Footer() {
     },
   ];
   return (
-    <footer className="bg-lightBlue text-blueText h-auto flex font-montserrat p-12 justify-between">
-      <div className="flex flex-col justify-center items-start w-1/3">
+    <footer className="bg-lightBlue text-blueText h-auto m-auto flex gap-8 p-10 items-center flex-col md:flex-row font-montserrat md:p-12 justify-between">
+      <div className="flex flex-col justify-center items-center md:items-start w-2/3 md:w-1/3">
         <a exact="true" href="/">
           <img
             className="w-40"
@@ -42,14 +42,14 @@ export default function Footer() {
             alt="WindzGaming"
           />
         </a>
-        <p className="text-sm pt-2 italic">
+        <p className="text-sm pt-4 italic text-center md:text-left">
           Embrace the Ultimate Gaming Odyssey, Where Dreams Take Flight with
           WindzGaming's Limitless Adventure.
         </p>
       </div>
       <div className="w-1/3">
         <ul className="flex py-2 h-full items-center flex-col justify-between">
-          <li className="transition duration-200 ease-in-out hover:scale-110">
+          <li className="transition py-2 duration-200 ease-in-out hover:scale-110">
             <NavLink
               to="/"
               className="transition duration-200 ease-in-out hover:text-hoverText"
@@ -57,7 +57,7 @@ export default function Footer() {
               Homepage
             </NavLink>
           </li>
-          <li className="transition duration-200 ease-in-out hover:scale-110">
+          <li className="transition py-2 duration-200 ease-in-out hover:scale-110">
             <NavLink
               to="/about"
               className="transition duration-200 ease-in-out hover:text-hoverText"
@@ -65,7 +65,7 @@ export default function Footer() {
               About Us
             </NavLink>
           </li>
-          <li className="transition duration-200 ease-in-out hover:scale-110">
+          <li className="transition py-2 duration-200 ease-in-out hover:scale-110">
             <NavLink
               to="/products"
               className="transition duration-200 ease-in-out hover:text-hoverText"
@@ -73,7 +73,7 @@ export default function Footer() {
               Products
             </NavLink>
           </li>
-          <li className="transition duration-200 ease-in-out hover:scale-110">
+          <li className="transition py-2 duration-200 ease-in-out hover:scale-110">
             <NavLink
               to="/pricing"
               className="transition duration-200 ease-in-out hover:text-hoverText"

@@ -23,6 +23,14 @@ export default {
         mywhite: "#f5f5f7",
         blueText: "#0d4084"
       },
+
+      boxShadow: {
+        '3xl': "10px 10px 10px 0px rgba(0, 0, 0, 0.3)",
+      },
+
+      backdropBlur: {
+        xs: '2px',
+      }
     },
     plugins: [],
   },

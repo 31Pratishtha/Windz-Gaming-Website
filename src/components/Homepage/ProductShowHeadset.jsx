@@ -50,7 +50,7 @@ export default function ProductShowHeadset() {
     >
       <motion.div
         animate={descAnimation}
-        className="flex text-mywhite flex-col text-center pt-20 md:pt-0 md:text-left w-[80%] md:w-2/5 mx-auto md:mx-14 gap-4 text-myblack"
+        className="flex text-mywhite flex-col text-center pt-20 md:pt-0 md:text-left w-[80%] md:w-2/5 mx-auto md:mx-14 gap-4"
       >
         <h1 className="font-montserrat font-bold text-4xl">Pulse 3D Wireless Headset</h1>
         <p className="font-montserrat text-xl font-light">
