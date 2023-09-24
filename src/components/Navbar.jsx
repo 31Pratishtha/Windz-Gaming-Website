@@ -1,5 +1,5 @@
 import React from "react";
-import logoLight from "/src/assets/Images/logoLight.png";
+import logoLight from "../assets/Images/logoLight.png";
 import { NavLink } from "react-router-dom";
 import { useAuth } from "/src/contexts/AuthContext";
 export default function Navbar() {
