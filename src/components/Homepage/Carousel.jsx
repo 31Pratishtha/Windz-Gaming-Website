@@ -1,36 +1,31 @@
 import { React, useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import DestinyImg from "/src/assets/Images/Destiny.jpg";
-import ChrononexusImg from "/src/assets/Images/Chrononexus.jpg";
-import AstralascendancyImg from "/src/assets/Images/Astralascendancy.jpg";
-import CyberpunkImg from "/src/assets/Images/Cyberpunk.jpg";
-import NomanskyImg from "/src/assets/Images/Nomansky.png";
 
 export default function Carousel() {
   const timerRef = useRef(null);
   const slides = [
     {
-      url: DestinyImg,
+      url: "./src/assets/Images/Destiny.jpg",
       title: "Destiny",
       desc: "Unleash your destiny in this action-packed adventure, where fate awaits at every turn.",
     },
     {
-      url: ChrononexusImg,
+      url: "./src/assets/Images/Chrononexus.jpg",
       title: "Chrononexus",
-      desc: "Enter a time-bending world of mystery and marvels, where the nexus of time beckons.",
+      desc: " Enter a time-bending world of mystery and marvels, where the nexus of time beckons.",
     },
     {
-      url: AstralascendancyImg,
+      url: "./src/assets/Images/Astralascendancy.jpg",
       title: "Astralascendancy",
       desc: "Ascend to astral heights and explore uncharted realms in this epic odyssey.",
     },
     {
-      url: CyberpunkImg,
+      url: "./src/assets/Images/Cyberpunk.jpg",
       title: "Cyberpunk",
       desc: "Immerse yourself in a cybernetic metropolis, where neon-soaked streets hold secrets and surprises.",
     },
     {
-      url: NomanskyImg,
+      url: "./src/assets/Images/Nomansky.png",
       title: "Nomansky",
       desc: "Embark on an endless journey through the cosmos, where boundless skies and uncharted planets await your discovery.",
     },

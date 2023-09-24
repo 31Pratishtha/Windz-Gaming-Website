@@ -1,7 +1,6 @@
 import { React, useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import headsetImg from "/src/assets/Images/headset.png"
 
 export default function ProductShowHeadset() {
   const { ref, inView } = useInView({
@@ -66,7 +65,7 @@ export default function ProductShowHeadset() {
           }}
           animate={headsetAnimation}
           initial={{ x: "100vw" }}
-          src={headsetImg}
+          src="/src/assets/Images/headset.png"
           alt="headset"
         />
       </div>
