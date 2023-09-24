@@ -1,6 +1,7 @@
 import { React, useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import Ps5img from "/src/assets/Images/ps5.png"
 
 export default function ProductShowPs5() {
   const { ref, inView } = useInView({
@@ -69,7 +70,7 @@ export default function ProductShowPs5() {
           }}
           animate={ps5Amimaton}
           initial={{ x: "100vw" }}
-          src="./src/assets/Images/ps5.png"
+          src={Ps5img}
           alt="ps5"
         />
       </div>
