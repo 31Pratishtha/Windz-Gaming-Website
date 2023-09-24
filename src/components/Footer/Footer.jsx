@@ -1,6 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import LogoLightImg from "/src/assets/Images/LogoLight.png";
 import {
   faSquareFacebook,
   faInstagram,
@@ -38,7 +39,7 @@ export default function Footer() {
         <a exact="true" href="/">
           <img
             className="w-40"
-            src="/src/assets/Images/LogoLight.png"
+            src={LogoLightImg}
             alt="WindzGaming"
           />
         </a>

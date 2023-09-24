@@ -1,6 +1,7 @@
 import { React, useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import VRImg from "/src/assets/Images/VR.png";
 
 export default function ProductShowVR() {
   const { ref, inView } = useInView({
@@ -68,7 +69,7 @@ export default function ProductShowVR() {
           }}
           animate={ps5Amimaton}
           initial={{ x: "100vw" }}
-          src="/src/assets/Images/VR.png"
+          src={VRImg}
           alt="VR Headset"
         />
       </div>

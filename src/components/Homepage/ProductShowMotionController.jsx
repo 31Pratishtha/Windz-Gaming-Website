@@ -1,6 +1,7 @@
 import { React, useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import motionControllerImg from "/src/assets/Images/motionController.png"
 
 export default function ProductShowMotionController() {
   const { ref, inView } = useInView({
@@ -65,8 +66,8 @@ export default function ProductShowMotionController() {
           }}
           animate={headsetAnimation}
           initial={{ x: "100vw" }}
-          src="/src/assets/Images/motionController.png"
-          alt="ps5"
+          src={motionControllerImg}
+          alt="motionController"
           className="w-[70%] md:w-[50%] h-auto"
         />
       </div>
