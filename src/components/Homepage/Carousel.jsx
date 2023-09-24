@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import DestinyImg from "/src/assets/Images/Destiny.jpg";
 import ChrononexusImg from "/src/assets/Images/Chrononexus.jpg";
 import AstralascendancyImg from "/src/assets/Images/Astralascendancy.jpg";
-import CyberpunkImg from "/src/assets/Images/Cyberpunk.jpg";
+// import CyberpunkImg from "/src/assets/Images/Cyberpunk.jpg";
 import NomanskyImg from "/src/assets/Images/Nomansky.png";
 
 export default function Carousel() {
@@ -25,7 +25,7 @@ export default function Carousel() {
       desc: "Ascend to astral heights and explore uncharted realms in this epic odyssey.",
     },
     {
-      url: CyberpunkImg,
+      url: "/src/assets/Images/Cyberpunk.jpg",
       title: "Cyberpunk",
       desc: "Immerse yourself in a cybernetic metropolis, where neon-soaked streets hold secrets and surprises.",
     },
