@@ -66,7 +66,7 @@ export default function ProductShowHeadset() {
           animate={headsetAnimation}
           initial={{ x: "100vw" }}
           src="/src/assets/Images/headset.png"
-          alt="headset"
+          alt="ps5"
         />
       </div>
     </div>
