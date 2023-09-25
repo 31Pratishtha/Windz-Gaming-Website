@@ -69,7 +69,7 @@ export default function ProductShowPs5() {
           }}
           animate={ps5Amimaton}
           initial={{ x: "100vw" }}
-          src="/Images/ps5.png"
+          src="/assets/Images/ps5.png"
           alt="ps5"
         />
       </div>

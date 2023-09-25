@@ -76,7 +76,7 @@ export default function Authentication() {
 
   return (
     <AuthTypeContext.Provider value={contextValue}>
-      <div className="bg-[url('/src/assets/Images/signup-bg-lg.png')]">
+      <div className="bg-[url('/assets/Images/signup-bg-lg.png')]">
         <div className="p-10">
           <div className="max-w-md h-[750px] m-auto rounded-2xl relative">
             <button

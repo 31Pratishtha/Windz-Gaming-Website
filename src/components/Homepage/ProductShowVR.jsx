@@ -68,7 +68,7 @@ export default function ProductShowVR() {
           }}
           animate={ps5Amimaton}
           initial={{ x: "100vw" }}
-          src="/src/assets/Images/VR.png"
+          src="/assets/Images/VR.png"
           alt="VR Headset"
         />
       </div>

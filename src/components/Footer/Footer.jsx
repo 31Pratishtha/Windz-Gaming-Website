@@ -38,7 +38,7 @@ export default function Footer() {
         <a exact="true" href="/">
           <img
             className="w-40"
-            src="/src/assets/Images/LogoLight.png"
+            src="/assets/Images/LogoLight.png"
             alt="WindzGaming"
           />
         </a>

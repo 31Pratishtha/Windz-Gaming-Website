@@ -65,7 +65,7 @@ export default function ProductShowMotionController() {
           }}
           animate={headsetAnimation}
           initial={{ x: "100vw" }}
-          src="/src/assets/Images/motionController.png"
+          src="/assets/Images/motionController.png"
           alt="ps5"
           className="w-[70%] md:w-[50%] h-auto"
         />
