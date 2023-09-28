@@ -28,6 +28,14 @@ export default function Navbar() {
               Pricing
             </NavLink>
           </li>
+          <li className="transition duration-200 ease-in-out hover:scale-110">
+            <NavLink
+              to="/Products"
+              className="transition duration-200 ease-in-out hover:text-hoverText"
+            >
+              Products
+            </NavLink>
+          </li>
 
           {currentUser ? (
             <>
