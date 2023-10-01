@@ -1,19 +1,23 @@
-import React, { useEffect } from 'react'; // Import useEffect
-import { useProduct } from '/src/contexts/ProductContext';
+import React, { useEffect, useState} from "react"; // Import useEffect
+import { useProduct } from "/src/contexts/ProductContext";
 
 export default function Products() {
-  const { getProducts } = useProduct();
+  const { products } = useProduct();
 
-  useEffect(() => {
-    // Use useEffect to make sure getProducts is called after the component is mounted
-    try {
-      getProducts();
-    } catch (error) {
-      console.log(error);
-    }
-  }, []); // Empty dependency array ensures this runs only once after component mount
+  const handleAddToCart = () => {
+    
+  }
 
-  return (
-    <div className='text-lightText'>Products</div>
-  );
+  return <div className="text-lightText">
+    <div className="text-myblack flex flex-col ">
+      {products.map((product) => (
+        <div key={product.id} className="flex justify-between bg-mywhite">
+          <h2>{product.Name}</h2>
+          <p>Price: ${product.Price}</p>
+          <img src={product.Image} width={200} height={200} alt={product.Name} />
+          <button onClick={handleAddToCart}>Add to cart</button>
+        </div>
+      ))}
+    </div>
+  </div>;
 }
