@@ -9,7 +9,7 @@ export default function Products() {
   const { products } = useProduct();
   const navigate = useNavigate();
 
-  const handleAddToCart = () => {
+  const handleAddToCart = (prodId) => {
     if(currentUser) {
       alert("Added to cart");
     }
@@ -25,7 +25,7 @@ export default function Products() {
           <h2>{product.Name}</h2>
           <p>Price: ${product.Price}</p>
           <img src={product.Image} width={200} height={200} alt={product.Name} />
-          <button onClick={handleAddToCart}>Add to cart</button>
+          <button onClick={() => handleAddToCart(product.id)}>Add to cart</button>
         </div>
       ))}
     </div>

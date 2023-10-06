@@ -1,7 +1,13 @@
 import React, { useContext, useState, useEffect, createContext } from "react";
 import { app } from "../firebase";
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
-
+import {
+  getAuth,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  signOut,
+  GoogleAuthProvider,
+  signInWithPopup,
+} from "firebase/auth";
 
 const auth = getAuth(app);
 
@@ -14,7 +20,6 @@ export function useAuth() {
 }
 
 export function AuthProvider({ children }) {
-
   const [currentUser, setCurrentUser] = useState();
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
@@ -28,11 +33,11 @@ export function AuthProvider({ children }) {
       );
       return userCredential.user;
     } catch (error) {
-      console.error("Error creating account:", error.message);
+      console.error("Error creating account: ", error.message);
       throw error;
     }
   }
-  
+
   async function logIn(email, password) {
     try {
       const userCredential = await signInWithEmailAndPassword(
@@ -46,7 +51,7 @@ export function AuthProvider({ children }) {
       throw error;
     }
   }
-  
+
   async function logOut() {
     try {
       await signOut(auth);
@@ -58,7 +63,8 @@ export function AuthProvider({ children }) {
 
   async function googleSignUp() {
     try {
-      await signInWithPopup(auth, googleProvider);
+      const userCredential = await signInWithPopup(auth, googleProvider);
+      return userCredential.user;
     } catch (error) {
       console.error("Error signing in with Google:", error.message);
       throw error;
@@ -67,8 +73,12 @@ export function AuthProvider({ children }) {
 
   async function demoAccLogIn() {
     try {
-      await signInWithEmailAndPassword(auth, "windzdemoacc@windz.com", "demodemo");
-    } catch(error) {
+      await signInWithEmailAndPassword(
+        auth,
+        "windzdemoacc@windz.com",
+        "demodemo"
+      );
+    } catch (error) {
       console.error("Error logging in with demo account:", error.message);
       throw error;
     }
@@ -80,6 +90,7 @@ export function AuthProvider({ children }) {
       setCurrentUser(user);
       setLoading(false);
     });
+    console.log(currentUser);
     return unsubscribe;
   }, []);
 
