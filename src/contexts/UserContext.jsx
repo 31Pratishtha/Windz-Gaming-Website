@@ -33,6 +33,7 @@ export function UserProvider({ children }) {
           const productData = {
             name: null,
             price: null,
+            qty: 0,
           };
 
           await addDoc(cartCollectionRef, productData);
