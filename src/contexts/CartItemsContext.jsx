@@ -3,7 +3,6 @@ import { useAuth } from "/src/contexts/AuthContext";
 import { db } from "../firebase";
 import { collection, doc, onSnapshot} from "firebase/firestore";
 
-
 const CartItemsContext = createContext();
 
 export function useCartItems() {
@@ -14,6 +13,7 @@ export function CartItemsProvider({ children }) {
 
     const { currentUser } = useAuth();
 
+    if(currentUser){
     const UsersCollectionRef = collection(db, "Users");
     const UserDocRef = doc(UsersCollectionRef, currentUser.uid);
     const UserCartRef = collection(UserDocRef, "Cart");
@@ -22,7 +22,6 @@ export function CartItemsProvider({ children }) {
         const cartItems = [];
         
             onSnapshot(UserCartRef, (querySnapshot) => {
-                console.log("snapshot received.");
                 cartItems.length = 0;
 
                 querySnapshot.forEach((doc) => {
@@ -37,6 +36,9 @@ export function CartItemsProvider({ children }) {
         }catch(error){
             console.log("Error retrieving user's cart data: ", error);
         };
+
+    }
+
 
     const value = {};
     return(
