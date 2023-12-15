@@ -60,7 +60,6 @@ export default function Carousel() {
     if (timerRef.current) {
       clearTimeout(timerRef.current);
     }
-    console.log("useEffect");
     timerRef.current = setTimeout(() => {
       nextSlide();
     }, 3000);

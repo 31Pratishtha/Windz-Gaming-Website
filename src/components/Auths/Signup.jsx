@@ -4,11 +4,13 @@ import { useAuth } from "/src/contexts/AuthContext";
 import { useNavigate } from "react-router-dom";
 import { GoogleButton } from "react-google-button";
 import { AuthTypeContext } from "../../contexts/AuthTypeContext";
+import { useUser } from "/src/contexts/UserContext";
 
 export default function Signup() {
   const { signUp, googleSignUp, setError, error } = useAuth();
   const [loading, setLoading] = useState(false);
   const { switchToLogIn } = useContext(AuthTypeContext);
+  const { createUser } = useUser();
 
   const navigate = useNavigate();
   const { register, handleSubmit } = useForm();
@@ -21,7 +23,9 @@ export default function Signup() {
     try {
       setError("");
       setLoading(true);
-      await signUp(data.email, data.password);
+      const user = await signUp(data.email, data.password);
+      console.log("newUserSignup: ", user);
+      await createUser(user);
       navigate("/", { replace: true });
     } catch (error) {
       setError(`Failed to create an account.`);
@@ -35,7 +39,8 @@ export default function Signup() {
     try {
       setError("");
       setLoading(true);
-      await googleSignUp();
+      const user = await googleSignUp();
+      await createUser(user);
       navigate("/", { replace: true });
     } catch (error) {
       setError(`Failed to create an account with Google.`);
