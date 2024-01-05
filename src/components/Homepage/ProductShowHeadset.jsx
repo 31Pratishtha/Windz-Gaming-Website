@@ -46,7 +46,7 @@ export default function ProductShowHeadset() {
   return (
     <div
       ref={ref}
-      className="bg-myblack h-auto py-11 overflow-hidden justify-center items-center p-12 flex flex-col gap-12 md:flex-row-reverse"
+      className="bg-myblack h-screen py-11 overflow-hidden justify-center items-center p-12 flex flex-col gap-12 md:flex-row-reverse"
     >
       <motion.div
         animate={descAnimation}

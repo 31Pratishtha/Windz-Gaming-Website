@@ -46,7 +46,7 @@ export default function ProductShowPs5() {
   return (
     <div
       ref={ref}
-      className="bg-mywhite text-myblack h-auto mx-auto justify-center items-center p-12 flex flex-col md:flex-row gap-12 md:flex"
+      className="bg-mywhite text-myblack h-screen mx-auto justify-center items-center p-12 flex flex-col md:flex-row gap-12 md:flex"
     >
       <motion.div
         animate={NameAnimation}

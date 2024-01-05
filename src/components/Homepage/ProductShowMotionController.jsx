@@ -46,7 +46,7 @@ export default function ProductShowMotionController() {
   return (
     <div
       ref={ref}
-      className="bg-myblack h-auto py-11 p-12 overflow-hidden justify-center items-center flex flex-col gap-12 md:flex-row-reverse "
+      className="bg-myblack h-screen py-11 p-12 overflow-hidden justify-center items-center flex flex-col gap-12 md:flex-row-reverse "
     >
       <motion.div
         animate={descAnimation}

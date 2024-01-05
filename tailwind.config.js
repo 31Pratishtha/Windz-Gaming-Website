@@ -30,6 +30,10 @@ export default {
 
       backdropBlur: {
         xs: '2px',
+      },
+
+      gridTemplateColumns: {
+        '2': '25% 1fr'
       }
     },
     plugins: [],

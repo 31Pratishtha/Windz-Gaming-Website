@@ -12,7 +12,7 @@ export function useUser() {
 }
 
 export function UserProvider({ children }) {
-    
+
   async function createUser(newUser) {
     console.log("newUserUserContext", newUser);
     console.log("in createUser");
@@ -32,6 +32,7 @@ export function UserProvider({ children }) {
           const cartCollectionRef = collection(db, "Users", id, "Cart");
           const productData = {
             name: null,
+            image: null,
             price: null,
             qty: 0,
           };
