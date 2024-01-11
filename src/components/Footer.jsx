@@ -73,14 +73,6 @@ export default function Footer() {
               Products
             </NavLink>
           </li>
-          <li className="transition py-2 duration-200 ease-in-out hover:scale-110">
-            <NavLink
-              to="/pricing"
-              className="transition duration-200 ease-in-out hover:text-hoverText"
-            >
-              Pricing
-            </NavLink>
-          </li>
         </ul>
       </div>
       <div className="w-1/3">
