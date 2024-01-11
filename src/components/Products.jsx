@@ -47,7 +47,8 @@ export default function Products() {
       if (!cartItemSnapshot.exists()) {
         await setDoc(cartItemsDocRef, {
           name: prod.Name,
-          price: prod.Price,
+          image: prod.Image,
+          price: Number(prod.Price),
           qty: 1,
         });
       } else {

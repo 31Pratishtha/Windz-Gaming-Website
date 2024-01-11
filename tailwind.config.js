@@ -26,10 +26,15 @@ export default {
 
       boxShadow: {
         '3xl': "10px 10px 10px 0px rgba(0, 0, 0, 0.3)",
+        'md' : "0px 0px 3px 3px"
       },
 
       backdropBlur: {
         xs: '2px',
+      },
+
+      gridTemplateColumns: {
+        '2': '25% 1fr'
       }
     },
     plugins: [],

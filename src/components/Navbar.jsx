@@ -25,14 +25,6 @@ export default function Navbar() {
           </li>
           <li className="transition duration-200 ease-in-out hover:scale-110">
             <NavLink
-              to="/pricing"
-              className="transition duration-200 ease-in-out hover:text-hoverText"
-            >
-              Pricing
-            </NavLink>
-          </li>
-          <li className="transition duration-200 ease-in-out hover:scale-110">
-            <NavLink
               to="/Products"
               className="transition duration-200 ease-in-out hover:text-hoverText"
             >
