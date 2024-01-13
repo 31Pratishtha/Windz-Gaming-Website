@@ -24,8 +24,8 @@ export default function Authentication() {
   }
 
   return (
-    <div className="bg-[url('/assets/Images/signup-bg-lg.png')]">
-      <div className="p-10">
+    <div className="bg-[url('/assets/Images/signup-bg-lg.png')] h-screen">
+      <div className="p-28">
         <div className="flex flex-col justify-start items-center max-w-md h-[400px] bg-slate-50 m-auto rounded-2xl bg-opacity-20 shadow-3xl border-l border-t border-opacity-30 border-neutral-50 backdrop-blur-xs overflow-hidden relative">
           <div className="w-full h-52 flex relative">
             <div className="w-[150%] h-[700px] absolute bg-blueText bg-gradient-to-l from-[rgba(25,91,179,1)-95%] to-[rgba(13,64,132,1)] rounded-[50%] flex flex-col -left-44 -top-[500px]"></div>

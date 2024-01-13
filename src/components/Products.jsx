@@ -93,13 +93,13 @@ export default function Products() {
   };
 
   return (
-    <div className="text-myblack flex flex-col bg-mywhite ">
+    <div className="text-myblack flex flex-col bg-slate-300 ">
       <div className="m-4">
         {products.map((product) => {
           return (
             <div
               key={product.id}
-              className="grid grid-cols-4 gap-2 my-4 items-center bg-slate-200 px-8 py-2 rounded-lg"
+              className="grid grid-cols-4 gap-2 my-4 items-center bg-gradient-to-t from-slate-300 via-slate-200 to-slate-50 px-8 py-2 rounded-lg"
             >
               <img
                 src={product.Image}
@@ -118,24 +118,24 @@ export default function Products() {
                     <div className="grid grid-flow-col w-40 rounded-lg border border-solid border-slate-400  text-slate-800 ">
                       <button
                         onClick={() => handleRemoveFromCart(product)}
-                        className="px-[15%] py-2 bg-slate-800 text-mywhite rounded-s-lg "
+                        className="px-[15%] py-2 bg-slate-800 text-mywhite rounded-s-lg hover:bg-gradient-to-b hover:from-[#065f46bd] hover:via-[#065f4689] hover:ease-in-out hover:scale-105 hover:duration-150 "
                       >
                         -
                       </button>
                       <p className="text-center py-2">{itemQty[product.id]}</p>
                       <button
                         onClick={() => handleAddToCart(product)}
-                        className="px-[15%] py-2 bg-slate-800 text-mywhite rounded-e-lg"
+                        className="px-[15%] py-2 bg-slate-800 text-mywhite rounded-e-lg hover:bg-gradient-to-b hover:from-[#065f46bd] hover:via-[#065f4689] hover:ease-in-out hover:scale-105 hover:duration-150 "
                       >
                         +
                       </button>
                     </div>
                   </div>
                 ) : (
-                  <div className="flex justify-center">
+                  <div className="flex justify-center ">
                     <button
                       onClick={() => handleAddToCart(product)}
-                      className="bg-slate-800 text-mywhite py-2 w-40 rounded-lg "
+                      className="bg-slate-800 text-mywhite py-2 w-40 rounded-lg hover:bg-gradient-to-b hover:from-[#065f46bd]  hover:via-[#065f4689] hover:ease-in-out hover:scale-105 hover:duration-150 "
                     >
                       Add to cart
                     </button>
@@ -145,7 +145,7 @@ export default function Products() {
                 <div className="flex justify-center">
                   <button
                     onClick={() => navToLogin()}
-                    className="bg-slate-800 text-mywhite py-2 w-40 rounded-lg"
+                    className="bg-slate-800 text-mywhite py-2 w-40 rounded-lg hover:bg-gradient-to-b hover:from-[#065f46bd] hover:via-[#065f4689] hover:ease-in-out hover:scale-105 hover:duration-150 "
                   >
                     Add to cart
                   </button>
