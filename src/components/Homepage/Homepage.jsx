@@ -9,11 +9,23 @@ export default function Homepage() {
   const { currentUser } = useAuth();
   return (
     <>
-      <Carousel />
-      <ProductShowPs5 />
-      <ProductShowHeadset />
-      <ProductShowVR />
-      <ProductShowMotionController />
+      <div className="h-screen overflow-y-auto snap-y snap-mandatory">
+        <section className="snap-start">
+          <Carousel />
+        </section>
+        <section className="snap-start">
+          <ProductShowPs5 />
+        </section>
+        <section className="snap-start">
+          <ProductShowHeadset />
+        </section>
+        <section className="snap-start">
+          <ProductShowVR />
+        </section>
+        <section className="snap-start">
+          <ProductShowMotionController />
+        </section>
+      </div>
     </>
   );
 }

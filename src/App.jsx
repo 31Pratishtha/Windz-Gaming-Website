@@ -14,7 +14,7 @@ export default function App() {
         <UserProvider>
           <CartItemsProvider>
             <div className="bg-myblack min-h-screen">
-              <Navbar />
+              <Navbar className="sticky top-0"/>
               <Main />
               <Footer />
             </div>

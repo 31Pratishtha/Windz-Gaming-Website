@@ -93,7 +93,7 @@ export default function Products() {
   };
 
   return (
-    <div className="text-myblack flex flex-col bg-slate-300 ">
+    <div className="text-myblack flex flex-col bg-slate-300 overflow-y-auto">
       <div className="m-4">
         {products.map((product) => {
           return (
