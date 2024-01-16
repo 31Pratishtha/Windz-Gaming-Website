@@ -9,7 +9,7 @@ export default function Homepage() {
   const { currentUser } = useAuth();
   return (
     <>
-      <div className="h-screen overflow-y-auto snap-y snap-mandatory">
+      <div className="h-screen overflow-y-auto snap-y snap-mandatory no-scrollbar">
         <section className="snap-start">
           <Carousel />
         </section>
