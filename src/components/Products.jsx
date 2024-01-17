@@ -95,10 +95,10 @@ export default function Products() {
 
   return (
     <motion.div
-      className="text-myblack flex flex-col bg-slate-300 overflow-y-auto overflow-x-auto"
-      initial={{opacity: 0, transition: { duration: 0.3 } }}
+      className="text-myblack flex flex-col bg-slate-300 overflow-y-auto"
+      initial={{ opacity: 0, transition: { duration: 0.3 } }}
       animate={{ opacity: 1 }}
-      exit={{opacity: 0, transition: { duration: 0.3 } }}
+      exit={{ opacity: 0, transition: { duration: 0.3 } }}
     >
       <div className="m-4">
         {products.map((product) => {

@@ -39,9 +39,15 @@ export default function Authentication() {
               <h1>Profile</h1>
             </div>
           </div>
-          <h2 className="text-gray-300 pt-8 font-semibold">
-            Email: {currentUser.email}
-          </h2>
+          <div>
+            {currentUser ? (
+              <h2 className="text-gray-300 pt-8 font-semibold">
+                Email: {currentUser.email}
+              </h2>
+            ) : (
+              <h2 className="text-gray-300 pt-8 font-semibold"></h2>
+            )}
+          </div>
           <button
             disabled={loading}
             type="submit"
