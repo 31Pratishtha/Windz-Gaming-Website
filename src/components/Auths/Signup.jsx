@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { GoogleButton } from "react-google-button";
 import { AuthTypeContext } from "../../contexts/AuthTypeContext";
 import { useUser } from "/src/contexts/UserContext";
+import { motion } from "framer-motion";
 
 export default function Signup() {
   const { signUp, googleSignUp, setError, error } = useAuth();
@@ -51,7 +52,11 @@ export default function Signup() {
   }
 
   return (
-    <>
+    <motion.div
+      initial={{ opacity: 0, transition: { duration: 0.3 } }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0, transition: { duration: 0.3 } }}
+    >
       <form
         onSubmit={handleSubmit(handleSave)}
         className="flex flex-col gap-2 pt-6"
@@ -110,6 +115,6 @@ export default function Signup() {
           LogIn
         </span>
       </div>
-    </>
+    </motion.div>
   );
 }

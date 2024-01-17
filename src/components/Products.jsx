@@ -4,6 +4,7 @@ import { useAuth } from "/src/contexts/AuthContext";
 import { useNavigate } from "react-router-dom";
 import { db } from "../firebase";
 import { collection, deleteDoc, doc, getDoc, setDoc } from "firebase/firestore";
+import { motion } from "framer-motion";
 
 export default function Products() {
   const { currentUser } = useAuth();
@@ -93,7 +94,12 @@ export default function Products() {
   };
 
   return (
-    <div className="text-myblack flex flex-col bg-slate-300 overflow-y-auto">
+    <motion.div
+      className="text-myblack flex flex-col bg-slate-300 overflow-y-auto"
+      initial={{ opacity: 0, transition: { duration: 0.3 } }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0, transition: { duration: 0.3 } }}
+    >
       <div className="m-4">
         {products.map((product) => {
           return (
@@ -155,6 +161,6 @@ export default function Products() {
           );
         })}
       </div>
-    </div>
+    </motion.div>
   );
 }

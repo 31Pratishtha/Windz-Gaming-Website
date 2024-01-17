@@ -89,7 +89,7 @@ export default function Carousel() {
   };
 
   return (
-    <div className="min-h-screen sm:max-w-2xl sm:h-[19rem] md:max-w-6xl md:h-[33rem] mx-auto px-5">
+    <div className="min-h-screen sm:max-w-xl md:max-w-6xl sm:h-[40rem] mx-auto px-5">
       <span className="top-8 relative">
         <div className="relative h-[80%] w-full rounded-2xl overflow-hidden">
           <AnimatePresence initial={false} custom={direction}>
