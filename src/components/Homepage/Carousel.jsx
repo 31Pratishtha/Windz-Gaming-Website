@@ -89,62 +89,71 @@ export default function Carousel() {
   };
 
   return (
-    <div className="h-screen sm:max-w-2xl sm:h-[19rem] md:max-w-6xl md:h-[33rem] mx-auto my-10 px-5">
-      <div className="relative h-[92%] w-full rounded-2xl overflow-hidden">
-        <AnimatePresence initial={false} custom={direction}>
-          <motion.div
-            variants={variants}
-            initial="initial"
-            animate="animate"
-            exit="exit"
-            key={slides[currentIndex].url}
-            className=" bg-no-repeat rounded-2xl bg-cover bg-center flex items-center"
-            style={{
-              backgroundImage: `linear-gradient(to right, rgba(0, 0, 0, 0.7) 40%, rgba(0, 0, 0, 0.1)), url(${slides[currentIndex].url})`,
-              width: "100%",
-              height: "100%",
-            }}
-          >
-            <motion.div initial={{x: -100, opacity: 0}} animate={{ x: 0, opacity: 1}} transition={{delay:0.5,  duration: 0.6, ease: "easeInOut" }} className="flex flex-col w-[70%] md:w-[40%] pl-32">
-              <h2 className="font-montserrat text-2xl md:text-4xl text-mywhite font-extrabold">
-                {slides[currentIndex].title}
-              </h2>
-              <p className="font-montserrat text-sm md:text-lg text-mywhite font-normal pt-6">{slides[currentIndex].desc}</p>
+    <div className="min-h-screen sm:max-w-xl md:max-w-6xl sm:h-[40rem] mx-auto px-5">
+      <span className="top-8 relative">
+        <div className="relative h-[80%] w-full rounded-2xl overflow-hidden">
+          <AnimatePresence initial={false} custom={direction}>
+            <motion.div
+              variants={variants}
+              initial="initial"
+              animate="animate"
+              exit="exit"
+              key={slides[currentIndex].url}
+              className=" bg-no-repeat rounded-2xl bg-cover bg-center flex items-center"
+              style={{
+                backgroundImage: `linear-gradient(to right, rgba(0, 0, 0, 0.7) 40%, rgba(0, 0, 0, 0.1)), url(${slides[currentIndex].url})`,
+                width: "100%",
+                height: "100%",
+              }}
+            >
+              <motion.div
+                initial={{ x: -100, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                transition={{ delay: 0.5, duration: 0.6, ease: "easeInOut" }}
+                className="flex flex-col w-[70%] md:w-[40%] pl-32"
+              >
+                <h2 className="font-montserrat text-2xl md:text-4xl text-mywhite font-extrabold">
+                  {slides[currentIndex].title}
+                </h2>
+                <p className="font-montserrat text-sm md:text-lg text-mywhite font-normal pt-6">
+                  {slides[currentIndex].desc}
+                </p>
+              </motion.div>
             </motion.div>
-          </motion.div>
-        </AnimatePresence>
-        <div className="flex absolute top-[50%] justify-between items-center px-3 w-full">
-          <div
-            className="text-base w-6 h-6 sm:text-xl sm:w-8 sm:h-8 md:w-12 md:h-12 bg-white md:text-2xl opacity-40 rounded-full flex items-center justify-center hover:opacity-60 hover:cursor-pointer transition duration-200 ease-in-out"
-            onClick={() => {
-              prevSlide();
-            }}
-          >
-            🡨
-          </div>
-          <div
-            className="text-base w-6 h-6 sm:text-xl sm:w-8 sm:h-8 md:w-12 md:h-12 bg-white md:text-2xl opacity-40 rounded-full flex items-center justify-center hover:opacity-60 hover:cursor-pointer transition duration-200 ease-in-out"
-            onClick={() => {
-              nextSlide();
-            }}
-          >
-            🡪
+          </AnimatePresence>
+          <div className="flex absolute top-[50%] justify-between items-center px-3 w-full">
+            <div
+              className="text-base w-6 h-6 sm:text-xl sm:w-8 sm:h-8 md:w-12 md:h-12 bg-white md:text-2xl opacity-40 rounded-full flex items-center justify-center hover:opacity-60 hover:cursor-pointer transition duration-200 ease-in-out"
+              onClick={() => {
+                prevSlide();
+              }}
+            >
+              🡨
+            </div>
+            <div
+              className="text-base w-6 h-6 sm:text-xl sm:w-8 sm:h-8 md:w-12 md:h-12 bg-white md:text-2xl opacity-40 rounded-full flex items-center justify-center hover:opacity-60 hover:cursor-pointer transition duration-200 ease-in-out"
+              onClick={() => {
+                nextSlide();
+              }}
+            >
+              🡪
+            </div>
           </div>
         </div>
-      </div>
-      <div className="flex justify-center items-center w-full">
-        {slides.map((slide, slideindex) => (
-          <div
-            className="text-white opacity-40 rounded-full flex items-center justify-center w-8 h-8 hover:opacity-60 hover:cursor-pointer transition duration-200 ease-in-out"
-            onClick={() => {
-              setCurrentIndex(slideindex);
-            }}
-            key={slideindex}
-          >
-            {slideindex === currentIndex ? "●" : "○"}
-          </div>
-        ))}
-      </div>
+        <div className="flex justify-center items-center w-full">
+          {slides.map((slide, slideindex) => (
+            <div
+              className="text-white opacity-40 rounded-full flex items-center justify-center w-8 h-8 hover:opacity-60 hover:cursor-pointer transition duration-200 ease-in-out"
+              onClick={() => {
+                setCurrentIndex(slideindex);
+              }}
+              key={slideindex}
+            >
+              {slideindex === currentIndex ? "●" : "○"}
+            </div>
+          ))}
+        </div>
+      </span>
     </div>
   );
 }

@@ -43,8 +43,7 @@ export default function Footer() {
           />
         </a>
         <p className="text-sm pt-4 italic text-center md:text-left">
-          Embrace the Ultimate Gaming Odyssey, Where Dreams Take Flight with
-          WindzGaming's Limitless Adventure.
+          Embrace the Ultimate Gaming Odyssey.
         </p>
       </div>
       <div className="w-1/3">

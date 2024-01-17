@@ -76,7 +76,12 @@ export default function Authentication() {
 
   return (
     <AuthTypeContext.Provider value={contextValue}>
-      <div className="bg-[url('/assets/Images/signup-bg-lg.png')]">
+      <motion.div
+        className="bg-[url('/assets/Images/signup-bg-lg.png')]"
+        initial={{ opacity: 0, transition: { duration: 0.3 } }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0, transition: { duration: 0.3 } }}
+      >
         <div className="p-10">
           <div className="max-w-md h-[750px] m-auto rounded-2xl relative">
             <button
@@ -108,7 +113,7 @@ export default function Authentication() {
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
     </AuthTypeContext.Provider>
   );
 }
