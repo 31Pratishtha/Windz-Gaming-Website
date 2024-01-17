@@ -13,8 +13,8 @@ export default function App() {
       <ProductProvider>
         <UserProvider>
           <CartItemsProvider>
-            <div className="bg-myblack min-h-screen">
-              <Navbar className="sticky top-0"/>
+            <div className="bg-myblack min-h-screen overflow-hidden">
+              <Navbar />
               <Main />
               <Footer />
             </div>

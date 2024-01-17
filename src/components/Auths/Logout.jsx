@@ -1,6 +1,7 @@
 import { React, useState } from "react";
 import { useAuth } from "/src/contexts/AuthContext";
 import { Link, useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
 
 export default function Authentication() {
   const { logOut, currentUser } = useAuth();
@@ -24,7 +25,12 @@ export default function Authentication() {
   }
 
   return (
-    <div className="bg-[url('/assets/Images/signup-bg-lg.png')] h-screen">
+    <motion.div
+      className="bg-[url('/assets/Images/signup-bg-lg.png')] h-screen"
+      initial={{ opacity: 0, transition: { duration: 0.3 } }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0, transition: { duration: 0.3 } }}
+    >
       <div className="p-28">
         <div className="flex flex-col justify-start items-center max-w-md h-[400px] bg-slate-50 m-auto rounded-2xl bg-opacity-20 shadow-3xl border-l border-t border-opacity-30 border-neutral-50 backdrop-blur-xs overflow-hidden relative">
           <div className="w-full h-52 flex relative">
@@ -33,7 +39,9 @@ export default function Authentication() {
               <h1>Profile</h1>
             </div>
           </div>
-          <h2 className="text-gray-300 pt-8 font-semibold">Email: {currentUser.email}</h2>
+          <h2 className="text-gray-300 pt-8 font-semibold">
+            Email: {currentUser.email}
+          </h2>
           <button
             disabled={loading}
             type="submit"
@@ -44,6 +52,6 @@ export default function Authentication() {
           </button>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }

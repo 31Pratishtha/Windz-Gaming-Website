@@ -5,6 +5,7 @@ import { useCartItems } from "/src/contexts/CartItemsContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { collection, deleteDoc, doc, getDocs } from "firebase/firestore";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
+import { motion } from "framer-motion";
 
 export default function Cart() {
   const { handleAddToCart, handleRemoveFromCart, itemQty, cart, setCart } =
@@ -59,7 +60,12 @@ export default function Cart() {
   }, [itemQty, deleting]);
 
   return (
-    <div className="flex flex-col text-myblack bg-mywhite min-h-screen">
+    <motion.div
+      className="flex flex-col text-myblack bg-mywhite min-h-screen"
+      initial={{ opacity: 0, transition: { duration: 0.3 } }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0, transition: { duration: 0.3 } }}
+    >
       <div className="bg-[url('/public/assets/Images/cartBanner.png')] bg-slate-200 h-20 justify-center items-center flex">
         <p className="text-mywhite font-bold text-3xl">Your Cart</p>
       </div>
@@ -67,7 +73,9 @@ export default function Cart() {
         <div className="w-5/6 bg-gradient-to-l from-blue-100 via-blue-50 to-blue-50 text-myblack pb-2 max-h-screen  overflow-y-auto">
           {cart.length === 1 ? (
             <div className="flex justify-center items-center">
-              <p className="text-6xl font-thin text-cyan-900 opacity-80 italic py-20 px-24 tracking-wide leading-normal">In the cart's emptiness, the promise of gaming excitement awaits</p>
+              <p className="text-6xl font-thin text-cyan-900 opacity-80 italic py-20 px-24 tracking-wide leading-normal">
+                In the cart's emptiness, the promise of gaming excitement awaits
+              </p>
             </div>
           ) : (
             <div>
@@ -168,6 +176,6 @@ export default function Cart() {
           </button>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }

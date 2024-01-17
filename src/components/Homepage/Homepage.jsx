@@ -5,11 +5,18 @@ import ProductShowHeadset from "./ProductShowHeadset";
 import ProductShowVR from "./ProductShowVR";
 import ProductShowMotionController from "./ProductShowMotionController";
 import { useAuth } from "/src/contexts/AuthContext";
+import { motion } from "framer-motion";
+
 export default function Homepage() {
   const { currentUser } = useAuth();
   return (
     <>
-      <div className="h-screen overflow-y-auto snap-y snap-mandatory no-scrollbar">
+      <motion.div
+        className="h-screen overflow-y-auto snap-y snap-mandatory overflow-hidden no-scrollbar"
+        initial={{ opacity: 0, transition: { duration: 0.3 } }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0, transition: { duration: 0.3 } }}
+      >
         <section className="snap-start">
           <Carousel />
         </section>
@@ -25,7 +32,7 @@ export default function Homepage() {
         <section className="snap-start">
           <ProductShowMotionController />
         </section>
-      </div>
+      </motion.div>
     </>
   );
 }
