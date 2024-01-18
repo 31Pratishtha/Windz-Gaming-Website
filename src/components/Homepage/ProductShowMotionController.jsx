@@ -91,22 +91,24 @@ export default function ProductShowMotionController() {
   return (
     <div
       ref={ref}
-      className="bg-myblack h-screen py-11 p-12 overflow-hidden justify-center items-center flex flex-col gap-12 md:flex-row-reverse "
+      className="bg-myblack h-screen lg:p-12 md:p-10 overflow-hidden items-center flex flex-col lg:gap-12 sm:gap-16 md:gap-6 md:flex-row-reverse "
     >
       <motion.div
         animate={descAnimation}
-        className="flex text-mywhite flex-col text-center pt-20 md:pt-0 md:text-left w-[80%] md:w-2/5 mx-auto md:mx-14 gap-4"
+        className="flex text-mywhite flex-col text-center pt-12 md:pt-0 md:text-left w-[80%] md:w-2/5 mx-auto md:mx-14 gap-4"
       >
-        <h1 className="font-montserrat font-bold text-4xl">WindzStation Move motion controller</h1>
-        <p className="font-montserrat text-xl font-light">
+        <h1 className="font-montserrat font-bold lg:text-4xl md:text-2xl sm:text-xl">WindzStation Move motion controller</h1>
+        <p className="font-montserrat lg:text-xl md:text-lg sm:text-base font-light">
         Bring your hands into the game world and take full control of your VR experiences, giving an even deeper sense of presence and further enhancing your immersion.
         </p>
-        <button
-          onClick={() => handleClick()}
-          className="w-32 py-2 rounded-3xl bg-gradient-to-tr from-orange-400 via-orange-500 to-orange-600 bg-orange-500 hover:bg-gradient-to-bl transition ease-in-out hover:scale-105 duration-300 hover:shadow-md hover:shadow-orange-500/30 font-semibold"
-        >
-          Add To Cart
-        </button>
+        <div>
+          <button
+            onClick={() => handleClick()}
+            className="w-32 py-2 rounded-3xl bg-gradient-to-tr from-orange-400 via-orange-500 to-orange-600 bg-orange-500 hover:bg-gradient-to-bl transition ease-in-out hover:scale-105 duration-300 hover:shadow-md hover:shadow-orange-500/30 font-semibold"
+          >
+            Add To Cart
+          </button>
+        </div>
       </motion.div>
       <div className="md:p-4 flex justify-center mx-auto">
         <motion.img
@@ -118,7 +120,7 @@ export default function ProductShowMotionController() {
           initial={{ x: "100vw" }}
           src="/assets/Images/motionController.png"
           alt="ps5"
-          className="w-[70%] md:w-[50%] h-auto"
+          className="lg:w-[80%] md:w-[70%] sm:w-[50%]"
         />
       </div>
     </div>

@@ -94,28 +94,30 @@ export default function ProductShowVR() {
   return (
     <div
       ref={ref}
-      className="bg-mywhite text-myblack h-screen mx-auto justify-center items-center p-12 md:flex"
+      className="bg-mywhite text-myblack h-screen mx-auto justify-center items-center lg:p-12 md:p-10 lg:gap-12 sm:gap-1 md:gap-3 md:flex"
     >
       <motion.div
         animate={NameAnimation}
-        className="flex flex-col text-center pt-20 md:pt-0 md:text-left w-[80%] md:w-2/5 mx-auto md:mx-14 gap-4 text-myblack"
+        className="flex flex-col text-center sm:pt-12 sm:px-8 md:text-left lg:w-2/5 md:w-3/5 mx-auto md:mx-14 gap-4 text-myblack"
       >
-        <h1 className="font-montserrat font-bold text-4xl">WindzStation VR</h1>
-        <p className="font-montserrat text-xl font-light">
+        <h1 className="font-montserrat font-bold lg:text-4xl md:text-2xl sm:text-xl">WindzStation VR</h1>
+        <p className="font-montserrat lg:text-xl md:text-lg sm:text-base font-light">
           Enter an extraordinary gaming universe where dreams come alive.
           Powered by WindzStation and immersive VR, experience mind-bending
           adventures beyond reality. Get ready for exhilarating gameplay like
           never before.
         </p>
-        <button
-          onClick={() => handleClick()}
-          className="w-32 py-2 rounded-3xl bg-gradient-to-tr from-orange-400 via-orange-500 to-orange-600 bg-orange-500 hover:bg-gradient-to-bl transition ease-in-out hover:scale-105 duration-300 hover:shadow-md hover:shadow-orange-500/30 font-semibold"
-        >
-          Add To Cart
-        </button>
+        <div>
+          <button
+            onClick={() => handleClick()}
+            className="w-32 py-2 rounded-3xl bg-gradient-to-tr from-orange-400 via-orange-500 to-orange-600 bg-orange-500 hover:bg-gradient-to-bl transition ease-in-out hover:scale-105 duration-300 hover:shadow-md hover:shadow-orange-500/30 font-semibold"
+          >
+            Add To Cart
+          </button>
+        </div>
 
       </motion.div>
-      <div className="md:p-10 flex justify-center mx-auto overflow-hidden">
+      <div className="lg:p-20 md:p-12 sm:p-11 flex justify-center mx-auto overflow-hidden">
         <motion.img
           whileHover={{
             scale: 1.2,
@@ -125,6 +127,7 @@ export default function ProductShowVR() {
           initial={{ x: "100vw" }}
           src="/assets/Images/VR.png"
           alt="VR Headset"
+          className="md:w-[100%] sm:w-[40%]"
         />
       </div>
     </div>
