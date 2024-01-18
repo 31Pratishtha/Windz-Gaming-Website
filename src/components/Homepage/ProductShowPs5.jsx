@@ -90,7 +90,7 @@ export default function ProductShowPs5() {
   return (
     <div
       ref={ref}
-      className="bg-mywhite text-myblack h-screen mx-auto justify-center items-center lg:p-12 md:p-10 flex flex-col md:flex-row gap-12 sm:gap-3 md:gap-6 md:flex"
+      className="bg-mywhite text-myblack h-screen mx-auto justify-center items-center lg:p-12 md:p-10 flex flex-col md:flex-row lg:gap-12 sm:gap-0 md:gap-6 md:flex"
     >
       <motion.div
         animate={NameAnimation}
@@ -115,7 +115,7 @@ export default function ProductShowPs5() {
           </button>
         </div>
       </motion.div>
-      <div className="lg:p-16 md:p-12 sm:p-11 flex justify-center mx-auto overflow-hidden">
+      <div className="lg:p-16 md:p-12 sm:p-11 sm:pt-4 flex justify-center mx-auto overflow-hidden">
         <motion.img
           whileHover={{
             scale: 1.2,
@@ -125,6 +125,7 @@ export default function ProductShowPs5() {
           initial={{ x: "100vw" }}
           src="/assets/Images/ps5.png"
           alt="ps5"
+          className="lg:w-[90%] md:w-[85%] sm:w-[70%] mx-auto"
         />
       </div>
     </div>
