@@ -105,22 +105,25 @@ export default function Products() {
           return (
             <div
               key={product.id}
-              className="grid grid-cols-4 gap-2 my-4 items-center bg-gradient-to-t from-slate-300 via-slate-200 to-slate-50 px-8 py-2 rounded-lg"
+              className="grid md:grid-cols-4 md:grid-rows-1 sm:grid-cols-4 sm:grid-rows-3 gap-2 my-4 items-center bg-gradient-to-t from-slate-300 via-slate-200 to-slate-50 sm:px-20 sm:py-8 lg:px-8 py-2 rounded-lg"
             >
               <img
                 src={product.Image}
                 width={150}
                 height={150}
                 alt={product.Name}
+                className="md:row-span-1 md:col-span-1 sm:row-span-3 sm:col-span-2 "
               />
-              <h2>{product.Name}</h2>
-              <p className="flex justify-center font-semibold">
+              <h2 className="md:row-span-1 md:col-span-1 sm:row-span-1 sm:col-span-2 sm:flex sm:justify-center sm:text-center">
+                {product.Name}
+              </h2>
+              <p className="flex justify-center font-semibold md:row-span-1 md:col-span-1 sm:row-span-1 sm:col-span-2">
                 ₹{product.Price}
               </p>
 
               {currentUser ? (
                 itemQty[product.id] > 0 ? (
-                  <div className="flex justify-center">
+                  <div className="flex justify-center md:row-span-1 md:col-span-1 sm:row-span-1 sm:col-span-2">
                     <div className="grid grid-flow-col w-40 rounded-lg border border-solid border-slate-400  text-slate-800 ">
                       <button
                         onClick={() => handleRemoveFromCart(product)}
@@ -138,7 +141,7 @@ export default function Products() {
                     </div>
                   </div>
                 ) : (
-                  <div className="flex justify-center ">
+                  <div className="flex justify-center md:row-span-1 md:col-span-1 sm:row-span-1 sm:col-span-2">
                     <button
                       onClick={() => handleAddToCart(product)}
                       className="bg-slate-800 text-mywhite py-2 w-40 rounded-lg hover:bg-gradient-to-b hover:from-[#065f46bd]  hover:via-[#065f4689] hover:ease-in-out hover:scale-105 hover:duration-150 "
@@ -148,7 +151,7 @@ export default function Products() {
                   </div>
                 )
               ) : (
-                <div className="flex justify-center">
+                <div className="flex justify-center md:row-span-1 md:col-span-1 sm:row-span-1 sm:col-span-2">
                   <button
                     onClick={() => navToLogin()}
                     className="bg-slate-800 text-mywhite py-2 w-40 rounded-lg hover:bg-gradient-to-b hover:from-[#065f46bd] hover:via-[#065f4689] hover:ease-in-out hover:scale-105 hover:duration-150 "

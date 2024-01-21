@@ -74,15 +74,15 @@ export default function Footer() {
           </li>
         </ul>
       </div>
-      <div className="w-1/3">
-        <ul className="flex py-2 h-full items-center justify-between">
+      <div className="w-1/3 flex justify-center">
+        <ul className="flex py-2 h-full items-center justify-between lg:gap-9 sm:gap-3">
           {socials.map((icon) => (
-            <li className="flex items-center justify-center" key={icon.link}>
+            <li className="flex items-center justify-center " key={icon.link}>
               <a
                 href={icon.link}
                 target="_blank"
                 rel="noreferrer"
-                className="text-3xl transition duration-200 ease-in-out hover:scale-110 hover:text-hoverText"
+                className="text-3xl transition duration-200 ease-in-out hover:scale-110 hover:text-hoverText "
               >
                 <FontAwesomeIcon icon={icon.icon} />
               </a>
