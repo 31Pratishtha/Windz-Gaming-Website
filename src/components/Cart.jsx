@@ -69,8 +69,8 @@ export default function Cart() {
       <div className="bg-[url('/public/assets/Images/cartBanner.png')] bg-slate-200 h-20 justify-center items-center flex">
         <p className="text-mywhite font-bold text-3xl">Your Cart</p>
       </div>
-      <div className="flex flex-grow bg-red-400 ">
-        <div className="w-5/6 bg-gradient-to-l from-blue-100 via-blue-50 to-blue-50 text-myblack pb-2 max-h-screen  overflow-y-auto">
+      <div className="flex flex-grow md:flex-row sm:flex-col-reverse bg-red-400 ">
+        <div className="sm:w-full md:w-5/6 bg-gradient-to-l from-blue-100 via-blue-50 to-blue-50 text-myblack pb-2 max-h-screen  overflow-y-auto">
           {cart.length === 1 ? (
             <div className="flex justify-center items-center">
               <p className="text-6xl font-thin text-cyan-900 opacity-80 italic py-20 px-24 tracking-wide leading-normal">
@@ -84,18 +84,19 @@ export default function Cart() {
                 .map((item) => {
                   return (
                     <div className="relative" key={item.id}>
-                      <div className="text-myblack grid grid-cols-2 max-h-70 py-7 pl-5 ">
+                      <div className="text-myblack grid md:grid-cols-2 sm:grid-cols-21 max-h-70 py-7 pl-5 ">
                         <img
                           src={item.image}
-                          style={{ width: "70%" }}
+                          // style={{ width: "70%" }}
                           alt={item.name}
+                          className="md:w-[70%] sm:w-[60%]"
                         />
                         <div className="grid grid-rows-2">
                           <div className="flex items-center">
                             <p className="text-lg font-semibold">{item.name}</p>
                           </div>
-                          <div className="flex justify-between pr-12">
-                            <div className="flex justify-center items-center gap-2">
+                          <div className="flex md:flex-row sm:flex-col md:justify-between sm:gap-4 pr-12 ">
+                            <div className="flex justify-center items-center gap-2 md:flex sm:hidden">
                               <div className="flex justify-center">
                                 <div className="grid grid-flow-col w-24 rounded-lg border border-solid border-slate-400  text-slate-800 ">
                                   <button
@@ -114,13 +115,42 @@ export default function Cart() {
                                 </div>
                               </div>
                             </div>
-                            <div className="flex justify-center items-center">
+                            <div className="flex md:justify-center sm:justify-start items-center">
                               <p className="font-medium">₹ {item.price}</p>
                             </div>
-                            <div className="flex justify-center items-center">
+                            <div className="flex justify-center items-center md:flex sm:hidden">
                               <button onClick={() => deleteItem(item)}>
                                 <FontAwesomeIcon icon={faTrash} />
                               </button>
+                            </div>
+
+                            <div className="flex justify-between items-center md:hidden sm:flex">
+                              <div className="flex justify-center items-center gap-2">
+                                <div className="flex justify-center">
+                                  <div className="grid grid-flow-col w-24 rounded-lg border border-solid border-slate-400  text-slate-800 ">
+                                    <button
+                                      onClick={() => handleRemoveFromCart(item)}
+                                      className="px-[2%] py-1 text-slate-800 rounded-s-lg hover:scale-150 "
+                                    >
+                                      -
+                                    </button>
+                                    <p className="text-center py-1">
+                                      {item.qty}
+                                    </p>
+                                    <button
+                                      onClick={() => handleAddToCart(item)}
+                                      className="px-[2%] py-1 text-slate-800 rounded-e-lg hover:scale-150"
+                                    >
+                                      +
+                                    </button>
+                                  </div>
+                                </div>
+                              </div>
+                              <div className="flex justify-center items-center">
+                                <button onClick={() => deleteItem(item)}>
+                                  <FontAwesomeIcon icon={faTrash} />
+                                </button>
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -132,7 +162,7 @@ export default function Cart() {
             </div>
           )}
         </div>
-        <div className="w-2/5 bg-blue-100  p-10 flex flex-col gap-10">
+        <div className="w-full md:w-2/5 bg-blue-100 sm:p-4 sm:px-10 md:p-10 flex flex-col sm:gap-6 md:gap-10">
           <div className="flex flex-col">
             <div className=" relative flex justify-between font-medium py-5">
               <p>Subtotal</p>
