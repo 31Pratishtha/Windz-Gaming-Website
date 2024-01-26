@@ -3,7 +3,7 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     screens: {
-      sm: "480px",
+      sm: "320px",
       md: "768px",
       lg: "976px",
       xl: "1440px",
@@ -34,7 +34,8 @@ export default {
       },
 
       gridTemplateColumns: {
-        '2': '25% 1fr'
+        '2': '25% 1fr',
+        '21': '50% 1fr'
       }
     },
     plugins: [],

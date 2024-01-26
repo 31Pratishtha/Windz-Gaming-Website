@@ -98,7 +98,7 @@ export default function ProductShowVR() {
     >
       <motion.div
         animate={NameAnimation}
-        className="flex flex-col text-center sm:pt-12 sm:px-8 md:text-left lg:w-2/5 md:w-3/5 mx-auto md:mx-14 gap-4 text-myblack"
+        className="flex flex-col text-center sm:pt-12 md:pt-0 sm:px-8 md:text-left lg:w-2/5 md:w-3/5 mx-auto md:mx-14 gap-4 text-myblack"
       >
         <h1 className="font-montserrat font-bold lg:text-4xl md:text-2xl sm:text-xl">WindzStation VR</h1>
         <p className="font-montserrat lg:text-xl md:text-lg sm:text-base font-light">
