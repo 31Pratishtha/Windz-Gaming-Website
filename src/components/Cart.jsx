@@ -69,8 +69,8 @@ export default function Cart() {
       <div className="bg-[url('/public/assets/Images/cartBanner.png')] bg-slate-200 h-20 justify-center items-center flex">
         <p className="text-mywhite font-bold text-3xl">Your Cart</p>
       </div>
-      <div className="flex flex-grow md:flex-row sm:flex-col-reverse bg-red-400 ">
-        <div className="sm:w-full md:w-5/6 bg-gradient-to-l from-blue-100 via-blue-50 to-blue-50 text-myblack pb-2 max-h-screen  overflow-y-auto">
+      <div className="flex flex-grow md:flex-row sm:flex-col-reverse">
+        <div className="sm:w-full md:w-5/6 bg-gradient-to-l from-blue-100 via-blue-50 to-blue-50 text-myblack pb-2 max-h-screen  overflow-y-auto overflow-x-hidden">
           {cart.length === 1 ? (
             <div className="flex justify-center items-center">
               <p className="text-6xl font-thin text-cyan-900 opacity-80 italic py-20 px-24 tracking-wide leading-normal">
