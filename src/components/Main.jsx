@@ -12,7 +12,7 @@ import { AnimatePresence } from "framer-motion";
 export default function Main() {
   const location = useLocation();
   return (
-    <main>
+    <main className="font-montserrat">
       <AnimatePresence mode="wait">
         <Routes location={location} key={location.pathname}>
           <Route exact path="/" Component={Homepage} />
