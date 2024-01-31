@@ -2,6 +2,10 @@ import React from "react";
 import { motion } from "framer-motion";
 
 export default function AboutUs() {
+  const fadeInAnimationVarients = {
+    initial: { opacity: 0, y: 150 },
+    animate: { opacity: 1, y: 0, transition: { duration: 0.4 } },
+  };
   return (
     <motion.div
       className="bg-mywhite text-myblack min-h-screen flex flex-col items-center font-montserrat"
@@ -15,7 +19,13 @@ export default function AboutUs() {
         </header>
       </div>
       <div className="px-28 py-14 flex flex-col gap-44">
-        <section className="flex justify-center items-center gap-10">
+        <motion.section
+          className="flex justify-center items-center gap-10"
+          variants={fadeInAnimationVarients}
+          initial="initial"
+          whileInView="animate"
+          viewport={{ once: true }}
+        >
           <div className="flex flex-col gap-4">
             <h2 className="font-bold text-2xl">Our Mission</h2>
             <p className="text-xl font-montserrat text-justify font-light">
@@ -27,9 +37,15 @@ export default function AboutUs() {
             </p>
           </div>
           <img src="/assets/Images/ourMission.png" alt="" className="w-1/2" />
-        </section>
+        </motion.section>
 
-        <section className="flex flex-row-reverse justify-center items-center gap-10">
+        <motion.section
+          className="flex flex-row-reverse justify-center items-center gap-10"
+          variants={fadeInAnimationVarients}
+          initial="initial"
+          whileInView="animate"
+          viewport={{ once: true, margin: "-100px 0px -100px 0px" }}
+        >
           <div className="flex flex-col gap-4">
             <h2 className="font-bold text-2xl">Our Values</h2>
             <p className="text-xl font-montserrat text-justify font-light">
@@ -45,9 +61,15 @@ export default function AboutUs() {
             </p>
           </div>
           <img src="/assets/Images/ourValues.png" alt="" className="w-1/2" />
-        </section>
+        </motion.section>
 
-        <section className="flex justify-center items-center gap-10">
+        <motion.section
+          className="flex justify-center items-center gap-10"
+          variants={fadeInAnimationVarients}
+          initial="initial"
+          whileInView="animate"
+          viewport={{ once: true }}
+        >
           <div className="flex flex-col gap-4">
             <h2 className="font-bold text-2xl">Our Story</h2>
             <p className="text-xl font-montserrat text-justify font-light">
@@ -64,7 +86,7 @@ export default function AboutUs() {
             </p>
           </div>
           <img src="/assets/Images/ourStory.webp" alt="" />
-        </section>
+        </motion.section>
       </div>
     </motion.div>
   );
