@@ -61,7 +61,7 @@ export default function Cart() {
 
   return (
     <motion.div
-      className="flex flex-col text-myblack bg-mywhite min-h-screen"
+      className="flex flex-col text-myblack bg-mywhite min-h-screen font-montserrat"
       initial={{ opacity: 0, transition: { duration: 0.3 } }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0, transition: { duration: 0.3 } }}
