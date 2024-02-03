@@ -1,13 +1,11 @@
-import { useState } from "react";
 import { React, useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { useProduct } from "/src/contexts/ProductContext";
 import { useCartItems } from "/src/contexts/CartItemsContext";
 import { useAuth } from "/src/contexts/AuthContext";
 import { useNavigate } from "react-router-dom";
 import { db } from "/src/firebase";
-import { collection, getDocs, query, where, doc } from "firebase/firestore";
+import { collection, getDocs, query, where } from "firebase/firestore";
 
 export default function ProductShowHeadset() {
   
@@ -110,7 +108,7 @@ export default function ProductShowHeadset() {
         <div>
           <button
             onClick={() => handleClick()}
-            className="w-32 py-2 rounded-3xl bg-gradient-to-tr from-orange-400 via-orange-500 to-orange-600 bg-orange-500 hover:bg-gradient-to-bl transition ease-in-out hover:scale-105 duration-300 hover:shadow-md hover:shadow-orange-500/30 font-semibold"
+            className="w-32 py-2 rounded-3xl bg-gradient-to-tr from-orange-400 via-orange-500 to-orange-600 hover:bg-gradient-to-bl transition ease-in-out hover:scale-105 duration-300 hover:shadow-md hover:shadow-orange-500/30 font-semibold"
           >
             Add To Cart
           </button>

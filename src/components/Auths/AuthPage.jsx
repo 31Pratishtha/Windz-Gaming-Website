@@ -100,9 +100,9 @@ export default function Authentication() {
                   animate={expanded ? "expanded" : "collapsed"}
                   variants={backdropVariants}
                   transition={expandingTransition}
-                  className="w-[150%] h-[700px] absolute bg-blueText bg-gradient-to-l from-[rgba(25,91,179,1)-95%] to-[rgba(13,64,132,1)] rounded-[50%] flex flex-col -left-44 -top-[500px]"
+                  className="w-[150%] h-[700px] absolute z-30 bg-blueText bg-gradient-to-l from-[rgba(25,91,179,1)-95%] to-[rgba(13,64,132,1)] rounded-[50%] flex flex-col -left-44 -top-[500px]"
                 ></motion.div>
-                <div className="font-bold text-mywhite text-3xl z-10 pl-20 pt-16">
+                <div className="font-bold text-mywhite text-3xl z-40 pl-20 pt-16">
                   {authType === "signup" ? <h1>Sign Up</h1> : <h1>Log In</h1>}
                 </div>
               </div>

@@ -105,7 +105,7 @@ export default function Products() {
           return (
             <div
               key={product.id}
-              className="grid md:grid-cols-4 md:grid-rows-1 sm:grid-cols-4 sm:grid-rows-3 gap-2 my-4 items-center bg-gradient-to-t from-slate-300 via-slate-200 to-slate-50 sm:px-20 sm:py-8 lg:px-8 py-2 rounded-lg"
+              className="grid md:grid-cols-4 md:grid-rows-1 sm:grid-cols-4 sm:grid-rows-3 gap-2 my-4 items-center bg-gradient-to-t from-slate-300 via-slate-200 to-slate-50 px-8 sm:py-8 md:px-20 py-2 rounded-lg"
             >
               <img
                 src={product.Image}

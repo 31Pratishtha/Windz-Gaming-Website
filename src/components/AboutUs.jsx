@@ -18,16 +18,18 @@ export default function AboutUs() {
           About WindzGaming
         </header>
       </div>
-      <div className="px-28 py-14 flex flex-col gap-44">
+      <div className="px-12 md:px-28 py-20 flex flex-col gap-28 md:gap-44 relative ">
         <motion.section
-          className="flex justify-center items-center gap-10"
+          className="flex flex-col-reverse md:flex-row justify-center items-center gap-10"
           variants={fadeInAnimationVarients}
           initial="initial"
           whileInView="animate"
           viewport={{ once: true }}
         >
           <div className="flex flex-col gap-4">
-            <h2 className="font-bold text-2xl">Our Mission</h2>
+            <h2 className="font-bold text-2xl text-center md:text-left">
+              Our Mission
+            </h2>
             <p className="text-xl font-montserrat text-justify font-light">
               Our mission is to empower gaming enthusiasts by providing a
               platform transcending traditional experiences. We believe in the
@@ -36,18 +38,24 @@ export default function AboutUs() {
               unparalleled gaming adventures.
             </p>
           </div>
-          <img src="/assets/Images/ourMission.png" alt="" className="w-1/2" />
+          <img
+            src="/assets/Images/ourMission.png"
+            alt=""
+            className="h-1/2 md:w-1/2 "
+          />
         </motion.section>
 
         <motion.section
-          className="flex flex-row-reverse justify-center items-center gap-10"
+          className="flex flex-col-reverse md:flex-row-reverse justify-center items-center gap-10"
           variants={fadeInAnimationVarients}
           initial="initial"
           whileInView="animate"
-          viewport={{ once: true, margin: "-100px 0px -100px 0px" }}
+          viewport={{ once: true, margin: "-20px 0px -20px 0px" }}
         >
           <div className="flex flex-col gap-4">
-            <h2 className="font-bold text-2xl">Our Values</h2>
+            <h2 className="font-bold text-2xl text-center md:text-left">
+              Our Values
+            </h2>
             <p className="text-xl font-montserrat text-justify font-light">
               At WindzGaming, innovation fuels our gaming technology, pushing
               boundaries to create immersive experiences. Beyond hardware, we're
@@ -60,18 +68,24 @@ export default function AboutUs() {
               community, and craftsmanship.
             </p>
           </div>
-          <img src="/assets/Images/ourValues.png" alt="" className="w-1/2" />
+          <img
+            src="/assets/Images/ourValues.png"
+            alt=""
+            className="h-1/2 md:w-1/2"
+          />
         </motion.section>
 
         <motion.section
-          className="flex justify-center items-center gap-10"
+          className="flex flex-col-reverse md:flex-row justify-center items-center gap-10"
           variants={fadeInAnimationVarients}
           initial="initial"
           whileInView="animate"
           viewport={{ once: true }}
         >
           <div className="flex flex-col gap-4">
-            <h2 className="font-bold text-2xl">Our Story</h2>
+            <h2 className="font-bold text-2xl text-center md:text-left">
+              Our Story
+            </h2>
             <p className="text-xl font-montserrat text-justify font-light">
               WindzGaming started with a simple yet ambitious idea — to redefine
               the gaming experience. Founded by passionate gamers, our journey
@@ -85,7 +99,11 @@ export default function AboutUs() {
               moment, and every triumph in the gaming universe.
             </p>
           </div>
-          <img src="/assets/Images/ourStory.webp" alt="" />
+          <img
+            src="/assets/Images/ourStory.webp"
+            alt=""
+            className="h-1/2 md:w-1/2"
+          />
         </motion.section>
       </div>
     </motion.div>

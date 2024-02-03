@@ -85,12 +85,14 @@ export default function Cart() {
                   return (
                     <div className="relative" key={item.id}>
                       <div className="text-myblack grid md:grid-cols-2 sm:grid-cols-21 max-h-70 py-7 pl-5 ">
-                        <img
-                          src={item.image}
-                          // style={{ width: "70%" }}
-                          alt={item.name}
-                          className="md:w-[70%] sm:w-[60%]"
-                        />
+                        <div className="flex justify-center items-center">
+                          <img
+                            src={item.image}
+                            // style={{ width: "70%" }}
+                            alt={item.name}
+                            className="md:w-[70%] sm:w-[60%]"
+                          />
+                        </div>
                         <div className="grid grid-rows-2">
                           <div className="flex items-center">
                             <p className="text-lg font-semibold">{item.name}</p>

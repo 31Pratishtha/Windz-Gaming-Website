@@ -59,7 +59,7 @@ export default function Signup() {
     >
       <form
         onSubmit={handleSubmit(handleSave)}
-        className="flex flex-col gap-2 pt-6"
+        className="flex flex-col gap-2 pt-6 px-11 md:px-0"
       >
         <label htmlFor="email" className="text-gray-300">
           Email
@@ -100,13 +100,13 @@ export default function Signup() {
         </button>
       </form>
 
-      <p className="py-4 text-gray-300">OR</p>
+      <p className="py-4 text-gray-300 text-center">OR</p>
 
-      <div>
+      <div className="flex justify-center">
         <GoogleButton onClick={handleGoogleSignUp} />
       </div>
 
-      <div className="font-normal text-mywhite py-2 text-lg">
+      <div className="font-normal text-mywhite py-2 text-lg ">
         Already have an account?{" "}
         <span
           className="text-blueText underline font-bold cursor-pointer"
