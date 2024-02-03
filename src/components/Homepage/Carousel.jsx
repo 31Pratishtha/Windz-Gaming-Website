@@ -72,12 +72,12 @@ export default function Carousel() {
   };
 
   useEffect(() => {
-    // if (timerRef.current) {
-    //   clearTimeout(timerRef.current);
-    // }
-    // timerRef.current = setTimeout(() => {
-    //   nextSlide();
-    // }, 3000);
+    if (timerRef.current) {
+       clearTimeout(timerRef.current);
+     }
+     timerRef.current = setTimeout(() => {
+       nextSlide();
+     }, 3000);
 
     return () => {
       clearTimeout(timerRef.current);
