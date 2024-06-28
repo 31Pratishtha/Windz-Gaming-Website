@@ -1,13 +1,11 @@
-import { useState } from "react";
 import { React, useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { useProduct } from "/src/contexts/ProductContext";
 import { useCartItems } from "/src/contexts/CartItemsContext";
 import { useAuth } from "/src/contexts/AuthContext";
 import { useNavigate } from "react-router-dom";
 import { db } from "/src/firebase";
-import { collection, getDocs, query, where, doc } from "firebase/firestore";
+import { collection, getDocs, query, where } from "firebase/firestore";
 
 export default function ProductShowPs5() {
   //for adding to cart
@@ -123,7 +121,7 @@ export default function ProductShowPs5() {
           }}
           animate={ps5Amimaton}
           initial={{ x: "100vw" }}
-          src="/assets/Images/ps5.png"
+          src="/assets/Images/ps5.webp"
           alt="ps5"
           className="lg:w-[90%] md:w-[85%] sm:w-[70%] mx-auto"
         />

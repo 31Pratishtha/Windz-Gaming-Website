@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { useAuth } from "/src/contexts/AuthContext";
 import { db } from "../firebase";
 import { useCartItems } from "/src/contexts/CartItemsContext";
@@ -6,6 +6,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { collection, deleteDoc, doc, getDocs } from "firebase/firestore";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import { motion } from "framer-motion";
+import { PaymentElement, Elements } from "@stripe/react-stripe-js";
+import { loadStripe } from "@stripe/stripe-js";
+
+const stripePromise = loadStripe(
+  "pk_test_51P9M6fSG75cgTzAowwJHSac0Eq5fQSPNg11Sb7XGF6qWiLtCjn5MeY705DXbGr2udA1KFEq1iN2aQzy0jzu0Mbsb00ywBojOXI"
+);
 
 export default function Cart() {
   const { handleAddToCart, handleRemoveFromCart, itemQty, cart, setCart } =
@@ -59,6 +65,17 @@ export default function Cart() {
     fetchCart();
   }, [itemQty, deleting]);
 
+  const fetchClientSecret = async () => {
+    return fetch("/create-checkout-session", {
+      method: "POST",
+    })
+      // .then((res) => res.json())
+      .then((data) => data.clientSecret);
+  };
+
+  const options = {fetchClientSecret};
+  console.log('cli: ', fetchClientSecret());
+
   return (
     <motion.div
       className="flex flex-col text-myblack bg-mywhite min-h-screen font-montserrat"
@@ -66,7 +83,7 @@ export default function Cart() {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0, transition: { duration: 0.3 } }}
     >
-      <div className="bg-[url('/public/assets/Images/cartBanner.png')] bg-slate-200 h-20 justify-center items-center flex">
+      <div className="bg-[url('/public/assets/Images/cartBanner.webp')] bg-slate-200 h-20 justify-center items-center flex">
         <p className="text-mywhite font-bold text-3xl">Your Cart</p>
       </div>
       <div className="flex flex-grow md:flex-row sm:flex-col-reverse">
@@ -82,14 +99,15 @@ export default function Cart() {
               {cart
                 .filter((item) => item.qty > 0)
                 .map((item) => {
+                  {console.log('Cartttt i am rendering')}
                   return (
                     <div className="relative" key={item.id}>
                       <div className="text-myblack grid md:grid-cols-2 sm:grid-cols-21 max-h-70 py-7 pl-5 ">
                         <div className="flex justify-center items-center">
                           <img
                             src={item.image}
-                            // style={{ width: "70%" }}
                             alt={item.name}
+                            loading="lazy"
                             className="md:w-[70%] sm:w-[60%]"
                           />
                         </div>
@@ -206,6 +224,9 @@ export default function Cart() {
           <button className="py-2 mt-8 rounded-md bg-gradient-to-t from-emerald-300 via-emerald-400 to-emerald-500 hover:bg-gradient-to-b transition ease-in-out hover:scale-105 duration-500 hover:shadow-md hover:shadow-green-500/30 font-semibold">
             Checkout
           </button>
+          {/* <Elements stripe={stripePromise} options={options}>
+            <PaymentElement />
+          </Elements> */}
         </div>
       </div>
     </motion.div>

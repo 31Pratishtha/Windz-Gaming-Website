@@ -1,14 +1,14 @@
-import React from "react";
+import React, { Suspense } from "react";
 import Carousel from "./Carousel";
-import ProductShowPs5 from "./ProductShowPs5";
-import ProductShowHeadset from "./ProductShowHeadset";
-import ProductShowVR from "./ProductShowVR";
-import ProductShowMotionController from "./ProductShowMotionController";
-import { useAuth } from "/src/contexts/AuthContext";
+const ProductShowPs5 = React.lazy(() => import("./ProductShowPs5"));
+const ProductShowHeadset = React.lazy(() => import("./ProductShowHeadset"));
+const ProductShowVR = React.lazy(() => import("./ProductShowVR"));
+const ProductShowMotionController = React.lazy(() =>
+  import("./ProductShowMotionController")
+);
 import { motion } from "framer-motion";
 
 export default function Homepage() {
-  const { currentUser } = useAuth();
   return (
     <>
       <motion.div
@@ -21,16 +21,24 @@ export default function Homepage() {
           <Carousel />
         </section>
         <section className="snap-start">
-          <ProductShowPs5 />
+          <Suspense>
+            <ProductShowPs5 />
+          </Suspense>
         </section>
         <section className="snap-start">
-          <ProductShowHeadset />
+          <Suspense>
+            <ProductShowHeadset />
+          </Suspense>
         </section>
         <section className="snap-start">
-          <ProductShowVR />
+          <Suspense>
+            <ProductShowVR />
+          </Suspense>
         </section>
         <section className="snap-start">
-          <ProductShowMotionController />
+          <Suspense>
+            <ProductShowMotionController />
+          </Suspense>
         </section>
       </motion.div>
     </>

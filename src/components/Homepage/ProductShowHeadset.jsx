@@ -122,7 +122,7 @@ export default function ProductShowHeadset() {
           }}
           animate={headsetAnimation}
           initial={{ x: "100vw" }}
-          src="/assets/Images/headset.png"
+          src="/assets/Images/headset.webp"
           alt="headsets"
           className="lg:w-[97%] md:w-[80%] sm:w-[50%]"
         />

@@ -13,7 +13,7 @@ export default function AboutUs() {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0, transition: { duration: 0.3 } }}
     >
-      <div className="bg-[url('/public/assets/Images/cartBanner.png')] bg-slate-200 justify-center items-center flex w-screen py-6">
+      <div className="bg-[url('/public/assets/Images/cartBanner.webp')] bg-slate-200 justify-center items-center flex w-screen py-6">
         <header className="text-mywhite font-bold text-3xl">
           About WindzGaming
         </header>
@@ -39,7 +39,7 @@ export default function AboutUs() {
             </p>
           </div>
           <img
-            src="/assets/Images/ourMission.png"
+            src="/assets/Images/ourMission.webp"
             alt=""
             className="h-1/2 md:w-1/2 "
           />
@@ -69,7 +69,7 @@ export default function AboutUs() {
             </p>
           </div>
           <img
-            src="/assets/Images/ourValues.png"
+            src="/assets/Images/ourValues.webp"
             alt=""
             className="h-1/2 md:w-1/2"
           />

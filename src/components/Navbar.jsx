@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import logoLight from "/assets/Images/LogoLight.png";
+import logoLight from "/assets/Images/LogoLight.webp";
 import { NavLink } from "react-router-dom";
 import { useAuth } from "/src/contexts/AuthContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";

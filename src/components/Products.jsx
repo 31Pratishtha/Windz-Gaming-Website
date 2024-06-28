@@ -101,6 +101,7 @@ export default function Products() {
       exit={{ opacity: 0, transition: { duration: 0.3 } }}
     >
       <div className="m-4">
+        {console.log("I am re-rendering......")}
         {products.map((product) => {
           return (
             <div
@@ -112,6 +113,7 @@ export default function Products() {
                 width={150}
                 height={150}
                 alt={product.Name}
+                loading="lazy"
                 className="md:row-span-1 md:col-span-1 sm:row-span-3 sm:col-span-2 "
               />
               <h2 className="md:row-span-1 md:col-span-1 sm:row-span-1 sm:col-span-2 sm:flex sm:justify-center sm:text-center">

@@ -20,27 +20,27 @@ export default function Carousel() {
   const timerRef = useRef(null);
   const slides = [
     {
-      url: "/assets/Images/Destiny.jpg",
+      url: "/assets/Images/Destiny.webp",
       title: "Destiny",
       desc: "Unleash your destiny in this action-packed adventure, where fate awaits at every turn.",
     },
     {
-      url: "/assets/Images/Chrononexus.jpg",
+      url: "/assets/Images/Chrononexus.webp",
       title: "Chrononexus",
       desc: " Enter a time-bending world of mystery and marvels, where the nexus of time beckons.",
     },
     {
-      url: "/assets/Images/Astralascendancy.jpg",
+      url: "/assets/Images/Astralascendancy.webp",
       title: "Astralascendancy",
       desc: "Ascend to astral heights and explore uncharted realms in this epic odyssey.",
     },
     {
-      url: "/assets/Images/Cyberpunk.jpg",
+      url: "/assets/Images/Cyberpunk.webp",
       title: "Cyberpunk",
       desc: "Immerse yourself in a cybernetic metropolis, where neon-soaked streets hold secrets and surprises.",
     },
     {
-      url: "/assets/Images/Nomansky.png",
+      url: "/assets/Images/Nomansky.webp",
       title: "Nomansky",
       desc: "Embark on an endless journey through the cosmos, where boundless skies and uncharted planets await your discovery.",
     },

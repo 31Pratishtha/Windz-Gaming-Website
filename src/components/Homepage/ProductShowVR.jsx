@@ -125,7 +125,7 @@ export default function ProductShowVR() {
           }}
           animate={ps5Amimaton}
           initial={{ x: "100vw" }}
-          src="/assets/Images/VR.png"
+          src="/assets/Images/VR.webp"
           alt="VR Headset"
           className="md:w-[100%] sm:w-[40%]"
         />

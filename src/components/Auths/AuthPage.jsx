@@ -77,7 +77,7 @@ export default function Authentication() {
   return (
     <AuthTypeContext.Provider value={contextValue}>
       <motion.div
-        className="bg-[url('/assets/Images/signup-bg-lg.png')]"
+        className="bg-[url('/assets/Images/signup-bg-lg.webp')]"
         initial={{ opacity: 0, transition: { duration: 0.3 } }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0, transition: { duration: 0.3 } }}
